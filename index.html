@@ -1,209 +1,223 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<!-- CM009 - Document Header Meta & Favicons -->
+
+<!-- CM001 - Document Header Meta & Favicons -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sri Veda Organization - Professional Digital Web Designers & Application Developers</title>
-<link rel="icon" type="image/png" href="https://srivedaorg.online/SV_ORG_LOGO_FEVICON.png">
-<link rel="apple-touch-icon" href="https://srivedaorg.online/SV_ORG_LOGO_FEVICON.png">
-<link rel="manifest" href="data:application/manifest+json;utf8,eyJuYW1lIjoiU3JpIFZlZGEgT3JnYW5pemF0aW9uIiwic2hvcnRfbmFtZSI6IlNyaSBWZWRhIiwiZGVzY3JpcHRpb24iOiJQcm9mZXNzaW9uYWwgRGlnaXRhbCBXZWIgRGVzaWduZXJzICYgQXBwbGljYXRpb24gRGV2ZWxvcGVycyIsInN0YXJ0X3VybCI6Ii4iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMDUwOTE1IiwidGhlbWVfY29sb3IiOiIjMDUwOTE1IiwiaWNvbnMiOlt7InNyYyI6Imh0dHBzOi8vc3JpdmVkYW9yZy5vbmxpbmUvU1ZfT1JHX0xPR09fRkVWSUNPTi5wbmciLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIiwicHVycG9zZSI6ImFueSBtYXNrYWJsZSJ9XX0=">
+<link rel="icon" type="image/png" href="" class="config-favicon">
+<link rel="apple-touch-icon" href="" class="config-favicon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script>
-tailwind.config = {
-theme: {
-extend: {
-fontFamily: {
-slab: ['"Roboto Slab"', 'serif'],
-sans: ['"Inter"', 'sans-serif'],
-},
-colors: {
-navy: { 950: '#050915', 900: '#0b132b', 800: '#1c2541', 700: '#3a506b', 600: '#5bc0be' },
-gold: { 500: '#d4af37', 600: '#aa8c2c', 400: '#e5c158' }
-}
-}
-}
-}
-</script>
-<style>
-/* CM001 - Global Reset and Body Styles */
-body { background-color: #050915; font-family: 'Roboto Slab', serif; color: #f8fafc; overflow-x: hidden; margin: 0; padding: 0; }
 
-/* CM002 - Loader Animation styles */
+<!-- CM002 - Links and Configuration Variables -->
+<script>
+const CONFIG = { logo: "https://sri-veda-org.github.io/SVLP/SV_ORG_LOGO.png", favicon: "https://srivedaorg.online/SV_ORG_LOGO_FEVICON.png", phone: "9346119924", email: "contact.sriveda@gmail.com", address: "Chagalamarri, Andhra Pradesh - 518553", svtcUrl: "https://svtc.life", drvsrUrl: "https://drvsrhospital.in", sanjeevaUrl: "https://sanjeevahospital.in", ahobilamUrl: "https://ahobilamtemple.org" };
+</script>
+
+<!-- CM003 - Tailwind Configuration -->
+<script>
+tailwind.config = { theme: { extend: { fontFamily: { slab: ['"Roboto Slab"', 'serif'], sans: ['"Inter"', 'sans-serif'] }, colors: { gold: { 500: '#d4af37', 600: '#b5952f', 700: '#967923' } } } } }
+</script>
+
+<style>
+/* CM004 - Global Reset and Body Styles */
+body { background-color: #f8fafc; font-family: 'Roboto Slab', serif; color: #334155; overflow-x: hidden; margin: 0; padding: 0; }
+
+/* CM005 - Component Animations and Styles */
+.reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); } .reveal.active { opacity: 1; transform: translateY(0); } .custom-scrollbar::-webkit-scrollbar { width: 6px; } .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; } .custom-scrollbar::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 3px; }
+
+/* CM006 - Page Loader Spinners Styles */
 #loader { transition: opacity 0.5s ease-out, visibility 0.5s; }
 
-/* CM003 - Scroll Animations and Hover Glow classes */
-.reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-.reveal.active { opacity: 1; transform: translateY(0); }
-.bg-grid-pattern { background-size: 50px 50px; background-image: linear-gradient(to right, rgba(212, 175, 55, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(212, 175, 55, 0.02) 1px, transparent 1px); }
-.hover-gold-glow:hover { box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
-.custom-scrollbar::-webkit-scrollbar { width: 6px; }
-.custom-scrollbar::-webkit-scrollbar-track { background: #050915; }
-.custom-scrollbar::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 3px; }
+/* CM007 - Global Top Contact Bar Styles */
+/* Standard Tailwind configuration applies here */
 
-/* CM004 - Header Nav Link Underlines */
-.nav-link { position: relative; }
-.nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #d4af37; transition: width 0.2s ease; }
-.nav-link:hover::after { width: 100%; }
+/* CM008 - Sticky Brand Header & Menu Styles */
+.nav-link { position: relative; } .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #b5952f; transition: width 0.2s ease; } .nav-link:hover::after { width: 100%; }
 
-/* CM005 - Interactive Demo Tabs and Badges */
-.demo-tab-btn { transition: all 0.3s ease; }
+/* CM009 - Hero Section Layout Styles */
+.bg-grid-pattern { background-size: 50px 50px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px); }
+
+/* CM010 - Who We Are Section Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM011 - Services Grid Section Styles */
+.premium-card { transform: translateY(0); transition: transform 0.3s ease, box-shadow 0.3s ease; } .premium-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); }
+
+/* CM012 - Technologies & Progress Section Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM013 - Strategic Core Content Model Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM014 - Multi-Role Login Sandbox Section Styles */
 .sim-role-btn { transition: all 0.2s ease; }
 
-/* CM006 - Popup Modals Layout Adjustments */
+/* CM015 - Attendance Management Technical Panel Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM016 - Industries Target Segments Section Styles */
+.hover-gold-glow:hover { box-shadow: 0 0 25px rgba(212, 175, 55, 0.2); }
+
+/* CM017 - Production Ready Portals Section Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM018 - Customized Development Plans Section Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM019 - Development Blueprint Roadmap Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM020 - Operational Strengths & Why Us Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM021 - Service Notice Terms and Scope Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM022 - Direct Action Trigger Section Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM023 - Complex Dynamic Form & Contact Section Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM024 - Operational Footer Grid Styles */
+/* Standard Tailwind configuration applies here */
+
+/* CM025 - Interactive Popups & Notification Modals Styles */
 .modal-overlay { transition: opacity 0.3s ease, visibility 0.3s ease; }
-
-/* CM007 - Dynamic Interactive Cards Hover */
-.premium-card { transform: translateY(0); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.premium-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(212, 175, 55, 0.12); }
-
-/* CM008 - Sticky Sidebar Details Layout */
-.sticky-sidebar { position: sticky; top: 100px; }
 </style>
 </head>
-<body class="bg-navy-950 font-sans text-slate-300">
+<body class="bg-slate-50 font-sans text-slate-600">
 
-<!-- CM010 - Page Loader Spinners -->
-<div id="loader" class="fixed inset-0 z-[100] bg-navy-950 flex flex-col items-center justify-center">
+<!-- CM026 - Page Loader Spinners HTML -->
+<div id="loader" class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center">
 <div class="relative w-28 h-28 mb-4">
-<div class="absolute inset-0 rounded-full border-4 border-navy-900"></div>
+<div class="absolute inset-0 rounded-full border-4 border-slate-200"></div>
 <div class="absolute inset-0 rounded-full border-4 border-t-gold-500 animate-spin"></div>
-<div class="absolute inset-0 flex items-center justify-center"><img src="https://sri-veda-org.github.io/SVLP/SV_ORG_LOGO.png" alt="Sri Veda Logo" class="h-16 w-16 object-contain"></div>
+<div class="absolute inset-0 flex items-center justify-center"><img src="" alt="Sri Veda Logo" class="config-logo h-16 w-16 object-contain rounded-full"></div>
 </div>
-<h2 class="font-slab text-xl font-bold tracking-widest text-gold-500">SRI VEDA ORGANIZATION</h2>
-<p class="text-xs text-slate-400 mt-2 tracking-widest uppercase">Digital Enterprise Platform Loading...</p>
+<h2 class="font-slab text-xl font-bold tracking-widest text-gold-700">SRI VEDA ORGANIZATION</h2>
+<p class="text-xs text-slate-500 mt-2 tracking-widest uppercase">Digital Enterprise Platform Loading...</p>
 </div>
 
-<!-- CM011 - Global Top Contact Bar -->
-<div class="bg-navy-950 text-slate-400 text-xs py-2 border-b border-navy-900 hidden lg:block">
+<!-- CM027 - Global Top Contact Bar HTML -->
+<div class="bg-slate-100 text-slate-600 text-xs py-2 border-b border-slate-200 hidden lg:block">
 <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
 <div class="flex items-center space-x-6">
-<span><i class="fas fa-map-marker-alt text-gold-500 mr-2"></i>Chagalamarri, Andhra Pradesh - 518553</span>
-<a href="tel:9346119924" class="hover:text-gold-500 transition-colors"><i class="fas fa-phone-alt text-gold-500 mr-2"></i>9346119924</a>
-<a href="mailto:contact.sriveda@gmail.com" class="hover:text-gold-500 transition-colors"><i class="fas fa-envelope text-gold-500 mr-2"></i>contact.sriveda@gmail.com</a>
+<span><i class="fas fa-map-marker-alt text-gold-600 mr-2"></i><span class="config-address-text"></span></span>
+<a href="" class="config-phone-link hover:text-gold-700 transition-colors"><i class="fas fa-phone-alt text-gold-600 mr-2"></i><span class="config-phone-text"></span></a>
+<a href="" class="config-email-link hover:text-gold-700 transition-colors"><i class="fas fa-envelope text-gold-600 mr-2"></i><span class="config-email-text"></span></a>
 </div>
 <div class="flex items-center space-x-4">
-<span class="text-emerald-400 flex items-center"><span class="h-2 w-2 rounded-full bg-emerald-400 inline-block mr-1.5 animate-pulse"></span>PWA App Installer Ready</span>
-<span class="h-3 w-px bg-slate-800"></span>
-<button onclick="triggerPwaInstallation()" class="text-gold-500 font-bold hover:text-gold-400 uppercase tracking-widest text-[10px]"><i class="fas fa-download mr-1"></i>Install App</button>
+<span class="text-emerald-600 flex items-center"><span class="h-2 w-2 rounded-full bg-emerald-500 inline-block mr-1.5 animate-pulse"></span>PWA App Installer Ready</span>
+<span class="h-3 w-px bg-slate-300"></span>
+<button onclick="triggerPwaInstallation()" class="text-gold-700 font-bold hover:text-gold-600 uppercase tracking-widest text-[10px]"><i class="fas fa-download mr-1"></i>Install App</button>
 </div>
 </div>
 </div>
 
-<!-- CM012 - Sticky Brand Header & Menu -->
-<header id="main-header" class="sticky top-0 z-50 bg-navy-950/95 backdrop-blur-md border-b border-navy-900 transition-all duration-300">
+<!-- CM028 - Sticky Brand Header & Menu HTML -->
+<header id="main-header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
 <div class="max-w-7xl mx-auto px-4">
 <div class="flex justify-between items-center h-20">
 <a href="#home" class="flex items-center space-x-3 group">
-<img src="https://sri-veda-org.github.io/SVLP/SV_ORG_LOGO.png" alt="Sri Veda Logo" class="h-12 w-12 object-contain transition-transform group-hover:scale-105">
+<img src="" alt="Sri Veda Logo" class="config-logo h-12 w-12 object-contain rounded-full border-2 border-gold-200 shadow-sm transition-transform group-hover:scale-105">
 <div class="flex flex-col">
-<span class="font-slab text-lg font-bold text-white tracking-wider leading-tight">SRI VEDA</span>
-<span class="text-[9px] font-bold text-gold-500 tracking-widest uppercase">ORGANIZATION</span>
+<span class="font-slab text-2xl font-extrabold text-gold-600 tracking-wider leading-tight drop-shadow-sm italic">SRI VEDA</span>
+<span class="text-[9px] font-bold text-slate-500 tracking-widest uppercase">ORGANIZATION</span>
 </div>
 </a>
 <nav class="hidden lg:flex items-center space-x-6 font-slab text-xs uppercase tracking-wider">
-<a href="#home" class="nav-link py-2 text-slate-300 hover:text-gold-500 transition-colors">Home</a>
-<a href="#about" class="nav-link py-2 text-slate-300 hover:text-gold-500 transition-colors">About</a>
-<a href="#services" class="nav-link py-2 text-slate-300 hover:text-gold-500 transition-colors">Services</a>
-<a href="#technologies" class="nav-link py-2 text-slate-300 hover:text-gold-500 transition-colors">Technologies</a>
-<a href="#projects" class="nav-link py-2 text-slate-300 hover:text-gold-500 transition-colors">Projects</a>
-<a href="#plans" class="nav-link py-2 text-slate-300 hover:text-gold-500 transition-colors">Plans</a>
-<a href="#industries" class="nav-link py-2 text-slate-300 hover:text-gold-500 transition-colors">Industries</a>
-<a href="#contact" class="nav-link py-2 text-slate-300 hover:text-gold-500 transition-colors">Contact</a>
+<a href="#home" class="nav-link py-2 text-slate-600 hover:text-gold-700 transition-colors">Home</a>
+<a href="#services" class="nav-link py-2 text-slate-600 hover:text-gold-700 transition-colors">Services</a>
+<a href="#technologies" class="nav-link py-2 text-slate-600 hover:text-gold-700 transition-colors">Technologies</a>
+<a href="#projects" class="nav-link py-2 text-slate-600 hover:text-gold-700 transition-colors">Projects</a>
+<a href="#plans" class="nav-link py-2 text-slate-600 hover:text-gold-700 transition-colors">Plans</a>
+<a href="#contact" class="nav-link py-2 text-slate-600 hover:text-gold-700 transition-colors">Contact</a>
 </nav>
 <div class="hidden lg:block">
-<button onclick="openSimulationPortal('Admin')" class="border border-gold-500 hover:bg-gold-500 hover:text-navy-950 text-gold-500 font-bold px-5 py-2 rounded-full transition-all text-[11px] tracking-wider uppercase"><i class="fas fa-lock mr-1.5"></i>Admin Login</button>
+<button onclick="openSimulationPortal('Admin')" class="border border-gold-600 hover:bg-gold-500 hover:text-white text-gold-700 font-bold px-5 py-2 rounded-full transition-all text-[11px] tracking-wider uppercase"><i class="fas fa-lock mr-1.5"></i>Admin Login</button>
 </div>
 <div class="lg:hidden">
-<button id="mobile-menu-btn" class="text-slate-300 hover:text-gold-500 focus:outline-none p-2">
-<i class="fas fa-bars text-2xl" id="menu-icon"></i>
-</button>
+<button id="mobile-menu-btn" class="text-slate-600 hover:text-gold-700 focus:outline-none p-2"><i class="fas fa-bars text-2xl" id="menu-icon"></i></button>
 </div>
 </div>
 </div>
-<div id="mobile-menu" class="hidden lg:hidden bg-navy-900 border-b border-navy-950 px-4 py-4 space-y-3 font-slab text-xs uppercase tracking-wider">
-<a href="#home" class="mobile-nav-link block py-2 text-slate-300 hover:text-gold-500">Home</a>
-<a href="#about" class="mobile-nav-link block py-2 text-slate-300 hover:text-gold-500">About</a>
-<a href="#services" class="mobile-nav-link block py-2 text-slate-300 hover:text-gold-500">Services</a>
-<a href="#technologies" class="mobile-nav-link block py-2 text-slate-300 hover:text-gold-500">Technologies</a>
-<a href="#projects" class="mobile-nav-link block py-2 text-slate-300 hover:text-gold-500">Projects</a>
-<a href="#plans" class="mobile-nav-link block py-2 text-slate-300 hover:text-gold-500">Plans</a>
-<a href="#industries" class="mobile-nav-link block py-2 text-slate-300 hover:text-gold-500">Industries</a>
-<a href="#contact" class="mobile-nav-link block py-2 text-slate-300 hover:text-gold-500">Contact</a>
-<div class="pt-2 border-t border-navy-800">
-<button onclick="openSimulationPortal('Admin')" class="w-full bg-gold-500 text-navy-950 font-bold py-2.5 rounded text-center block tracking-wider uppercase"><i class="fas fa-lock mr-1.5"></i>Admin Login</button>
+<div id="mobile-menu" class="hidden lg:hidden bg-slate-50 border-b border-slate-200 px-4 py-4 space-y-3 font-slab text-xs uppercase tracking-wider">
+<a href="#home" class="mobile-nav-link block py-2 text-slate-600 hover:text-gold-700">Home</a>
+<a href="#services" class="mobile-nav-link block py-2 text-slate-600 hover:text-gold-700">Services</a>
+<a href="#technologies" class="mobile-nav-link block py-2 text-slate-600 hover:text-gold-700">Technologies</a>
+<a href="#projects" class="mobile-nav-link block py-2 text-slate-600 hover:text-gold-700">Projects</a>
+<a href="#plans" class="mobile-nav-link block py-2 text-slate-600 hover:text-gold-700">Plans</a>
+<a href="#contact" class="mobile-nav-link block py-2 text-slate-600 hover:text-gold-700">Contact</a>
+<div class="pt-2 border-t border-slate-200">
+<button onclick="openSimulationPortal('Admin')" class="w-full bg-gold-500 text-white font-bold py-2.5 rounded text-center block tracking-wider uppercase"><i class="fas fa-lock mr-1.5"></i>Admin Login</button>
 </div>
 </div>
 </header>
 
-<!-- CM013 - Hero Section Layout -->
-<section id="home" class="relative bg-navy-950 py-16 lg:py-24 overflow-hidden bg-grid-pattern">
-<div class="absolute top-1/4 left-1/10 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"></div>
-<div class="absolute bottom-1/10 right-1/10 w-[500px] h-[500px] bg-gold-500/5 rounded-full blur-3xl pointer-events-none"></div>
+<!-- CM029 - Hero Section Layout HTML -->
+<section id="home" class="relative bg-slate-50 pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden bg-grid-pattern">
+<div class="absolute top-1/4 left-1/10 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-1/10 right-1/10 w-[500px] h-[500px] bg-amber-100/50 rounded-full blur-3xl pointer-events-none"></div>
 <div class="max-w-7xl mx-auto px-4 relative z-10">
 <div class="grid lg:grid-cols-12 gap-12 items-center">
 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-<div class="inline-flex items-center gap-2 bg-navy-900 border border-gold-500/20 rounded-full px-4 py-1.5 text-xs font-bold text-gold-500 tracking-wider uppercase">
-<span class="flex h-2 w-2 rounded-full bg-gold-500 animate-pulse"></span>
-Sri Veda Software House AP
+<div class="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-1.5 text-xs font-bold text-gold-700 tracking-wider uppercase">
+<span class="flex h-2 w-2 rounded-full bg-gold-500 animate-pulse"></span>Sri Veda Software House AP
 </div>
-<h1 class="font-slab text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white">
+<h1 class="font-slab text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-slate-900">
 We Build Professional <br>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-500 to-amber-300 drop-shadow-md">Digital Experiences</span>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-500 via-gold-600 to-amber-500 drop-shadow-sm">Digital Experiences</span>
 </h1>
-<h2 class="font-slab text-base sm:text-lg md:text-xl font-medium text-slate-300">
-Front-End, Back-End and Dynamic Web Development Services
-</h2>
-<p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
+<h2 class="font-slab text-base sm:text-lg md:text-xl font-medium text-slate-700">Front-End, Back-End and Dynamic Web Development Services</h2>
+<p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
 Sri Veda Organization creates professional, secure, responsive, fast, and user-friendly websites for hospitals, temples, schools, organizations, institutions, and companies. We develop complete digital systems according to each organization’s requirements, services, staff structure, administrators, and users.
 </p>
 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-<a href="#projects" class="w-full sm:w-auto text-center bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold px-8 py-3.5 rounded transition-all text-xs uppercase tracking-widest shadow-lg">View Our Projects</a>
-<a href="#contact" class="w-full sm:w-auto text-center border border-slate-600 hover:border-gold-500 text-slate-300 hover:text-gold-500 font-bold px-8 py-3.5 rounded transition-all text-xs uppercase tracking-widest bg-navy-900/50">Contact Us</a>
+<a href="#projects" class="w-full sm:w-auto text-center bg-gold-500 hover:bg-gold-600 text-white font-bold px-8 py-3.5 rounded transition-all text-xs uppercase tracking-widest shadow-md">View Our Projects</a>
+<a href="#contact" class="w-full sm:w-auto text-center border border-slate-300 hover:border-gold-500 text-slate-600 hover:text-gold-700 font-bold px-8 py-3.5 rounded transition-all text-xs uppercase tracking-widest bg-white">Contact Us</a>
 </div>
-<div class="pt-4 flex items-center justify-center lg:justify-start gap-2 text-xs text-slate-400">
+<div class="pt-4 flex items-center justify-center lg:justify-start gap-2 text-xs text-slate-500">
 <span>Administrative Console Demo Access:</span>
-<button onclick="openSimulationPortal('Admin')" class="text-gold-500 hover:text-gold-400 font-bold underline transition-colors uppercase tracking-widest text-[10px]">Admin Login Portal <i class="fas fa-chevron-right text-[9px]"></i></button>
+<button onclick="openSimulationPortal('Admin')" class="text-gold-700 hover:text-gold-600 font-bold underline transition-colors uppercase tracking-widest text-[10px]">Admin Login Portal <i class="fas fa-chevron-right text-[9px]"></i></button>
 </div>
 </div>
 <div class="lg:col-span-5">
-<div class="bg-navy-900 border border-slate-800 rounded-2xl p-4 shadow-2xl relative overflow-hidden">
-<div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
-<div class="flex space-x-1.5">
-<span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
-<span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
-<span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-</div>
-<span class="text-[10px] text-slate-400 font-mono tracking-wider">sriveda-node-server.sh</span>
-<i class="fas fa-circle-nodes text-gold-500 text-xs animate-pulse"></i>
+<div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+<div class="flex space-x-1.5"><span class="w-3 h-3 rounded-full bg-rose-400 inline-block"></span><span class="w-3 h-3 rounded-full bg-amber-400 inline-block"></span><span class="w-3 h-3 rounded-full bg-emerald-400 inline-block"></span></div>
+<span class="text-[10px] text-slate-500 font-mono tracking-wider">sriveda-node-server.sh</span>
+<i class="fas fa-circle-nodes text-gold-600 text-xs animate-pulse"></i>
 </div>
 <div class="space-y-4 text-xs font-mono">
 <div class="grid grid-cols-2 gap-2">
-<div class="bg-navy-950 p-3 rounded border border-slate-800">
+<div class="bg-slate-50 p-3 rounded border border-slate-200">
 <div class="text-[9px] text-slate-500 uppercase">Deployment status</div>
-<div class="text-sm font-bold text-emerald-400 mt-1">100% ONLINE</div>
+<div class="text-sm font-bold text-emerald-600 mt-1">100% ONLINE</div>
 </div>
-<div class="bg-navy-950 p-3 rounded border border-slate-800">
+<div class="bg-slate-50 p-3 rounded border border-slate-200">
 <div class="text-[9px] text-slate-500 uppercase">Active platform</div>
-<div class="text-sm font-bold text-gold-500 mt-1">Cloud Servers</div>
+<div class="text-sm font-bold text-gold-700 mt-1">Cloud Servers</div>
 </div>
 </div>
-<div class="bg-navy-950 p-3 rounded border border-slate-800 h-40 overflow-y-auto text-[10px] text-slate-300 space-y-1.5 custom-scrollbar">
-<p class="text-slate-500">// Booting Sri Veda Dev Systems</p>
-<p class="text-gold-500">&gt; npm run compile --production</p>
-<p class="text-slate-400">&gt; Building high-level cloud servers... OK</p>
-<p class="text-emerald-400">&gt; Connecting Chagalamarri Database Node... OK</p>
-<p class="text-cyan-400">&gt; Deploying secure role auth systems... OK</p>
-<p class="text-slate-400">&gt; Realtime active updates sync... ENABLED</p>
-<p class="text-slate-500">// System listening for operations...</p>
+<div class="bg-slate-50 p-3 rounded border border-slate-200 h-40 overflow-y-auto text-[10px] text-slate-600 space-y-1.5 custom-scrollbar">
+<p class="text-slate-400">// Booting Sri Veda Dev Systems</p>
+<p class="text-gold-700">&gt; npm run compile --production</p>
+<p class="text-slate-500">&gt; Building high-level cloud servers... OK</p>
+<p class="text-emerald-600">&gt; Connecting Chagalamarri Database Node... OK</p>
+<p class="text-blue-600">&gt; Deploying secure role auth systems... OK</p>
+<p class="text-slate-500">&gt; Realtime active updates sync... ENABLED</p>
+<p class="text-slate-400">// System listening for operations...</p>
 </div>
-<div class="bg-navy-950 p-3 rounded border border-slate-800/80 flex items-center justify-between">
-<span class="text-[10px] text-slate-400">PWA Active App Simulator</span>
-<button onclick="triggerPwaInstallation()" class="bg-gold-500 hover:bg-gold-600 text-navy-950 px-3 py-1.5 rounded text-[9px] font-bold transition-all uppercase tracking-wider">Install App</button>
+<div class="bg-slate-50 p-3 rounded border border-slate-200 flex items-center justify-between">
+<span class="text-[10px] text-slate-500">PWA Active App Simulator</span>
+<button onclick="triggerPwaInstallation()" class="bg-gold-500 hover:bg-gold-600 text-white px-3 py-1.5 rounded text-[9px] font-bold transition-all uppercase tracking-wider">Install App</button>
 </div>
 </div>
 </div>
@@ -212,60 +226,56 @@ Sri Veda Organization creates professional, secure, responsive, fast, and user-f
 </div>
 </section>
 
-<!-- CM014 - Who We Are Section -->
-<section id="about" class="py-20 bg-navy-900 border-y border-navy-800 relative">
+<!-- CM030 - Who We Are Section HTML -->
+<section id="about" class="py-20 bg-white border-y border-slate-200 relative">
 <div class="max-w-7xl mx-auto px-4 relative z-10">
 <div class="grid lg:grid-cols-2 gap-12 items-center">
 <div class="space-y-6 reveal">
-<div class="inline-flex items-center gap-2 bg-gold-500/10 text-gold-500 rounded px-3 py-1 text-xs font-bold tracking-wider uppercase">Who We Are</div>
-<h2 class="font-slab text-3xl sm:text-4xl font-bold text-white tracking-tight">We Plan, Design and Code Around Your Actual Goals</h2>
-<p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+<div class="inline-flex items-center gap-2 bg-amber-50 text-gold-700 rounded px-3 py-1 text-xs font-bold tracking-wider uppercase">Who We Are</div>
+<h2 class="font-slab text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">We Plan, Design and Code Around Your Actual Goals</h2>
+<p class="text-slate-600 leading-relaxed text-sm sm:text-base">
 Sri Veda Organization is a professional digital web design and development service provider. We create customized websites and web applications based on the identity, services, workflow, staff, administrators, customers, and users of each organization.
 </p>
-<div class="bg-navy-950 border-l-4 border-gold-500 p-5 rounded-r">
-<p class="text-slate-300 font-medium italic text-sm">
+<div class="bg-slate-50 border-l-4 border-gold-500 p-5 rounded-r">
+<p class="text-slate-700 font-medium italic text-sm">
 "We do not use the same design for every client. Every website is custom planned, architected, and coded based on the organization's unique requirements, layout goals, and functional modules."
 </p>
 </div>
-<p class="text-slate-300 leading-relaxed text-sm">
+<p class="text-slate-600 leading-relaxed text-sm">
 Our purpose is to help organizations present their services professionally, manage information digitally, simplify administrative work, and provide better online services to their users. By integrating customized roles, security layers, and custom data processing, we deliver robust solutions for every enterprise.
 </p>
 </div>
 <div class="space-y-6 reveal">
-<div class="bg-navy-950 border border-slate-800 rounded-2xl p-8 shadow-xl space-y-6">
-<h3 class="font-slab text-xl font-bold text-gold-500 flex items-center gap-2">
-<i class="fas fa-microchip"></i> System Implementation Capabilities
-</h3>
-<p class="text-xs text-slate-400 leading-relaxed">
-Unlike generic static pages, we engineer complex modern systems using cloud platforms:
-</p>
+<div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+<h3 class="font-slab text-xl font-bold text-gold-700 flex items-center gap-2"><i class="fas fa-microchip"></i> System Implementation Capabilities</h3>
+<p class="text-xs text-slate-500 leading-relaxed">Unlike generic static pages, we engineer complex modern systems using cloud platforms:</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div class="flex items-start gap-2.5">
-<span class="text-gold-500"><i class="fas fa-cloud-upload-alt text-sm"></i></span>
+<span class="text-gold-600"><i class="fas fa-cloud-upload-alt text-sm"></i></span>
 <div>
-<h4 class="font-bold text-white text-xs uppercase tracking-wider">Free Plan Cloud Hosting</h4>
-<p class="text-[11px] text-slate-400">Deploying on cost-free, high-performance edge layers.</p>
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider">Free Plan Cloud Hosting</h4>
+<p class="text-[11px] text-slate-500">Deploying on cost-free, high-performance edge layers.</p>
 </div>
 </div>
 <div class="flex items-start gap-2.5">
-<span class="text-gold-500"><i class="fas fa-lock text-sm"></i></span>
+<span class="text-gold-600"><i class="fas fa-lock text-sm"></i></span>
 <div>
-<h4 class="font-bold text-white text-xs uppercase tracking-wider">Secure Payment Systems</h4>
-<p class="text-[11px] text-slate-400">Custom payment gateways with role verification.</p>
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider">Secure Payment Systems</h4>
+<p class="text-[11px] text-slate-500">Custom payment gateways with role verification.</p>
 </div>
 </div>
 <div class="flex items-start gap-2.5">
-<span class="text-gold-500"><i class="fas fa-sync text-sm"></i></span>
+<span class="text-gold-600"><i class="fas fa-sync text-sm"></i></span>
 <div>
-<h4 class="font-bold text-white text-xs uppercase tracking-wider">Realtime Synchronizations</h4>
-<p class="text-[11px] text-slate-400">Data automatically updates across all viewports.</p>
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider">Realtime Synchronizations</h4>
+<p class="text-[11px] text-slate-500">Data automatically updates across all viewports.</p>
 </div>
 </div>
 <div class="flex items-start gap-2.5">
-<span class="text-gold-500"><i class="fas fa-server text-sm"></i></span>
+<span class="text-gold-600"><i class="fas fa-server text-sm"></i></span>
 <div>
-<h4 class="font-bold text-white text-xs uppercase tracking-wider">Custom Server Solutions</h4>
-<p class="text-[11px] text-slate-400">Full backend systems on high-level architecture.</p>
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider">Custom Server Solutions</h4>
+<p class="text-[11px] text-slate-500">Full backend systems on high-level architecture.</p>
 </div>
 </div>
 </div>
@@ -275,216 +285,214 @@ Unlike generic static pages, we engineer complex modern systems using cloud plat
 </div>
 </section>
 
-<!-- CM015 - Services Grid Section -->
-<section id="services" class="py-20 bg-navy-950">
+<!-- CM031 - Services Grid Section HTML -->
+<section id="services" class="py-20 bg-slate-50">
 <div class="max-w-7xl mx-auto px-4">
 <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-<span class="text-gold-500 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-navy-900 rounded border border-gold-500/20">Complete Web Capabilities</span>
-<h2 class="font-slab text-3xl sm:text-4xl font-bold text-white mt-3 tracking-tight">Complete Website Development Services</h2>
-<p class="text-slate-400 mt-3 text-sm">We provide expert layout design, full-stack programming, and dynamic administration dashboards tailored for institutions.</p>
+<span class="text-gold-700 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-white rounded border border-slate-200">Complete Web Capabilities</span>
+<h2 class="font-slab text-3xl sm:text-4xl font-bold text-slate-900 mt-3 tracking-tight">Complete Website Development Services</h2>
+<p class="text-slate-600 mt-3 text-sm">We provide expert layout design, full-stack programming, and dynamic administration dashboards tailored for institutions.</p>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="bg-navy-900 border border-slate-800/80 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
+<div class="bg-white border border-slate-200 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
 <div>
-<div class="h-12 w-12 bg-navy-950 text-gold-500 rounded flex items-center justify-center text-xl mb-6"><i class="fas fa-code"></i></div>
-<h3 class="font-slab text-base font-bold text-white mb-2 uppercase tracking-wider">Front-End Development</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Create attractive, responsive, user-friendly, and professional website interfaces using HTML, CSS, and JavaScript.</p>
+<div class="h-12 w-12 bg-slate-50 text-gold-600 rounded flex items-center justify-center text-xl mb-6 border border-slate-100"><i class="fas fa-code"></i></div>
+<h3 class="font-slab text-base font-bold text-slate-900 mb-2 uppercase tracking-wider">Front-End Development</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Create attractive, responsive, user-friendly, and professional website interfaces using HTML, CSS, and JavaScript.</p>
 </div>
-<div class="text-[9px] tracking-widest font-mono text-slate-500 uppercase mt-4">W3C Clean Code</div>
+<div class="text-[9px] tracking-widest font-mono text-slate-400 uppercase mt-4">W3C Clean Code</div>
 </div>
-<div class="bg-navy-900 border border-slate-800/80 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
+<div class="bg-white border border-slate-200 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
 <div>
-<div class="h-12 w-12 bg-navy-950 text-gold-500 rounded flex items-center justify-center text-xl mb-6"><i class="fas fa-server"></i></div>
-<h3 class="font-slab text-base font-bold text-white mb-2 uppercase tracking-wider">Back-End Development</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Develop secure systems for handling logins, forms, records, user data, staff data, reports, and dynamic website content.</p>
+<div class="h-12 w-12 bg-slate-50 text-gold-600 rounded flex items-center justify-center text-xl mb-6 border border-slate-100"><i class="fas fa-server"></i></div>
+<h3 class="font-slab text-base font-bold text-slate-900 mb-2 uppercase tracking-wider">Back-End Development</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Develop secure systems for handling logins, forms, records, user data, staff data, reports, and dynamic website content.</p>
 </div>
-<div class="text-[9px] tracking-widest font-mono text-slate-500 uppercase mt-4">Node JS / API Systems</div>
+<div class="text-[9px] tracking-widest font-mono text-slate-400 uppercase mt-4">Node JS / API Systems</div>
 </div>
-<div class="bg-navy-900 border border-slate-800/80 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
+<div class="bg-white border border-slate-200 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
 <div>
-<div class="h-12 w-12 bg-navy-950 text-gold-500 rounded flex items-center justify-center text-xl mb-6"><i class="fas fa-shuffle"></i></div>
-<h3 class="font-slab text-base font-bold text-white mb-2 uppercase tracking-wider">Dynamic Web Dev</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Create websites where information can change dynamically based on users, administrators, departments, services, or login permissions.</p>
+<div class="h-12 w-12 bg-slate-50 text-gold-600 rounded flex items-center justify-center text-xl mb-6 border border-slate-100"><i class="fas fa-shuffle"></i></div>
+<h3 class="font-slab text-base font-bold text-slate-900 mb-2 uppercase tracking-wider">Dynamic Web Dev</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Create websites where information can change dynamically based on users, administrators, departments, services, or login permissions.</p>
 </div>
-<div class="text-[9px] tracking-widest font-mono text-slate-500 uppercase mt-4">Asynchronous Storage</div>
+<div class="text-[9px] tracking-widest font-mono text-slate-400 uppercase mt-4">Asynchronous Storage</div>
 </div>
-<div class="bg-navy-900 border border-slate-800/80 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
+<div class="bg-white border border-slate-200 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
 <div>
-<div class="h-12 w-12 bg-navy-950 text-gold-500 rounded flex items-center justify-center text-xl mb-6"><i class="fas fa-gauge-high"></i></div>
-<h3 class="font-slab text-base font-bold text-white mb-2 uppercase tracking-wider">Website Optimization</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Develop lightweight and optimized web pages for faster loading, improved browser performance, mobile responsiveness, and better UX.</p>
+<div class="h-12 w-12 bg-slate-50 text-gold-600 rounded flex items-center justify-center text-xl mb-6 border border-slate-100"><i class="fas fa-gauge-high"></i></div>
+<h3 class="font-slab text-base font-bold text-slate-900 mb-2 uppercase tracking-wider">Website Optimization</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Develop lightweight and optimized web pages for faster loading, improved browser performance, mobile responsiveness, and better UX.</p>
 </div>
-<div class="text-[9px] tracking-widest font-mono text-slate-500 uppercase mt-4">Page Speed Optimized</div>
+<div class="text-[9px] tracking-widest font-mono text-slate-400 uppercase mt-4">Page Speed Optimized</div>
 </div>
-<div class="bg-navy-900 border border-slate-800/80 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
+<div class="bg-white border border-slate-200 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
 <div>
-<div class="h-12 w-12 bg-navy-950 text-gold-500 rounded flex items-center justify-center text-xl mb-6"><i class="fas fa-table-columns"></i></div>
-<h3 class="font-slab text-base font-bold text-white mb-2 uppercase tracking-wider">Admin Dashboard</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Create administrative dashboards to manage users, content, reports, records, services, attendance, and website data.</p>
+<div class="h-12 w-12 bg-slate-50 text-gold-600 rounded flex items-center justify-center text-xl mb-6 border border-slate-100"><i class="fas fa-table-columns"></i></div>
+<h3 class="font-slab text-base font-bold text-slate-900 mb-2 uppercase tracking-wider">Admin Dashboard</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Create administrative dashboards to manage users, content, reports, records, services, attendance, and website data.</p>
 </div>
-<div class="text-[9px] tracking-widest font-mono text-slate-500 uppercase mt-4">Comprehensive Controls</div>
+<div class="text-[9px] tracking-widest font-mono text-slate-400 uppercase mt-4">Comprehensive Controls</div>
 </div>
-<div class="bg-navy-900 border border-slate-800/80 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
+<div class="bg-white border border-slate-200 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
 <div>
-<div class="h-12 w-12 bg-navy-950 text-gold-500 rounded flex items-center justify-center text-xl mb-6"><i class="fas fa-user-lock"></i></div>
-<h3 class="font-slab text-base font-bold text-white mb-2 uppercase tracking-wider">Secure Logins</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Create separate login systems for administrators, staff members, teachers, doctors, students, customers, and other authorized users.</p>
+<div class="h-12 w-12 bg-slate-50 text-gold-600 rounded flex items-center justify-center text-xl mb-6 border border-slate-100"><i class="fas fa-user-lock"></i></div>
+<h3 class="font-slab text-base font-bold text-slate-900 mb-2 uppercase tracking-wider">Secure Logins</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Create separate login systems for administrators, staff members, teachers, doctors, students, customers, and other authorized users.</p>
 </div>
-<div class="text-[9px] tracking-widest font-mono text-slate-500 uppercase mt-4">Role Based Security</div>
+<div class="text-[9px] tracking-widest font-mono text-slate-400 uppercase mt-4">Role Based Security</div>
 </div>
-<div class="bg-navy-900 border border-slate-800/80 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
+<div class="bg-white border border-slate-200 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
 <div>
-<div class="h-12 w-12 bg-navy-950 text-gold-500 rounded flex items-center justify-center text-xl mb-6"><i class="fas fa-database"></i></div>
-<h3 class="font-slab text-base font-bold text-white mb-2 uppercase tracking-wider">Data Management</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Develop systems to collect, store, update, search, filter, track, and manage customer or organizational data securely.</p>
+<div class="h-12 w-12 bg-slate-50 text-gold-600 rounded flex items-center justify-center text-xl mb-6 border border-slate-100"><i class="fas fa-database"></i></div>
+<h3 class="font-slab text-base font-bold text-slate-900 mb-2 uppercase tracking-wider">Data Management</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Develop systems to collect, store, update, search, filter, track, and manage customer or organizational data securely.</p>
 </div>
-<div class="text-[9px] tracking-widest font-mono text-slate-500 uppercase mt-4">Relational Databases</div>
+<div class="text-[9px] tracking-widest font-mono text-slate-400 uppercase mt-4">Relational Databases</div>
 </div>
-<div class="bg-navy-900 border border-slate-800/80 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
+<div class="bg-white border border-slate-200 p-6 rounded-xl premium-card flex flex-col justify-between reveal">
 <div>
-<div class="h-12 w-12 bg-navy-950 text-gold-500 rounded flex items-center justify-center text-xl mb-6"><i class="fas fa-fingerprint"></i></div>
-<h3 class="font-slab text-base font-bold text-white mb-2 uppercase tracking-wider">Attendance Systems</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Create real-time attendance systems with check-in/out. Attendance updates become immediately visible to authorized administrators.</p>
+<div class="h-12 w-12 bg-slate-50 text-gold-600 rounded flex items-center justify-center text-xl mb-6 border border-slate-100"><i class="fas fa-fingerprint"></i></div>
+<h3 class="font-slab text-base font-bold text-slate-900 mb-2 uppercase tracking-wider">Attendance Systems</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Create real-time attendance systems with check-in/out. Attendance updates become immediately visible to authorized administrators.</p>
 </div>
-<div class="text-[9px] tracking-widest font-mono text-slate-500 uppercase mt-4">Realtime Check-in Logs</div>
+<div class="text-[9px] tracking-widest font-mono text-slate-400 uppercase mt-4">Realtime Check-in Logs</div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- CM016 - Technologies & Progress Section -->
-<section id="technologies" class="py-20 bg-navy-900 border-y border-navy-800">
+<!-- CM032 - Technologies & Progress Section HTML -->
+<section id="technologies" class="py-20 bg-white border-y border-slate-200">
 <div class="max-w-7xl mx-auto px-4">
 <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-<span class="text-gold-500 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-navy-950 rounded border border-gold-500/20">Technical Competence</span>
-<h2 class="font-slab text-3xl sm:text-4xl font-bold text-white mt-3 tracking-tight">Technologies We Use</h2>
-<p class="text-slate-400 mt-3 text-sm">We build robust digital platforms using optimized front-end markup, layout styles, and database scripts.</p>
+<span class="text-gold-700 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-slate-50 rounded border border-slate-200">Technical Competence</span>
+<h2 class="font-slab text-3xl sm:text-4xl font-bold text-slate-900 mt-3 tracking-tight">Technologies We Use</h2>
+<p class="text-slate-600 mt-3 text-sm">We build robust digital platforms using optimized front-end markup, layout styles, and database scripts.</p>
 </div>
 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="bg-navy-950 border border-slate-800 p-6 rounded-xl space-y-4 reveal">
+<div class="bg-slate-50 border border-slate-200 p-6 rounded-xl space-y-4 reveal">
 <div class="flex justify-between items-center">
 <span class="text-3xl text-orange-500"><i class="fab fa-html5"></i></span>
-<span class="bg-orange-500/10 text-orange-400 text-[10px] font-bold px-2 py-0.5 rounded font-mono">HTML5</span>
+<span class="bg-orange-100 text-orange-600 text-[10px] font-bold px-2 py-0.5 rounded font-mono">HTML5</span>
 </div>
-<h3 class="font-slab text-base font-bold text-white uppercase tracking-wider">Structured HTML</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Use properly structured and optimized HTML for fast browser rendering, accessibility, SEO, and reliable website performance.</p>
+<h3 class="font-slab text-base font-bold text-slate-900 uppercase tracking-wider">Structured HTML</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Use properly structured and optimized HTML for fast browser rendering, accessibility, SEO, and reliable website performance.</p>
 <div class="space-y-1">
 <div class="flex justify-between text-[10px] text-slate-500 font-bold"><span>SEO Standards Validation</span><span>95%</span></div>
-<div class="w-full bg-navy-900 h-1.5 rounded-full overflow-hidden"><div class="bg-orange-500 h-full rounded-full" style="width: 95%"></div></div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden"><div class="bg-orange-500 h-full rounded-full" style="width: 95%"></div></div>
 </div>
 </div>
-<div class="bg-navy-950 border border-slate-800 p-6 rounded-xl space-y-4 reveal">
+<div class="bg-slate-50 border border-slate-200 p-6 rounded-xl space-y-4 reveal">
 <div class="flex justify-between items-center">
-<span class="text-3xl text-blue-400"><i class="fab fa-css3-alt"></i></span>
-<span class="bg-blue-400/10 text-blue-400 text-[10px] font-bold px-2 py-0.5 rounded font-mono">CSS3</span>
+<span class="text-3xl text-blue-500"><i class="fab fa-css3-alt"></i></span>
+<span class="bg-blue-100 text-blue-600 text-[10px] font-bold px-2 py-0.5 rounded font-mono">CSS3</span>
 </div>
-<h3 class="font-slab text-base font-bold text-white uppercase tracking-wider">Bespoke Styling</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Write stylish, responsive, and organization-specific CSS. Every design matches the organization’s identity, colors, purpose, and services.</p>
+<h3 class="font-slab text-base font-bold text-slate-900 uppercase tracking-wider">Bespoke Styling</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Write stylish, responsive, and organization-specific CSS. Every design matches the organization’s identity, colors, purpose, and services.</p>
 <div class="space-y-1">
 <div class="flex justify-between text-[10px] text-slate-500 font-bold"><span>Adaptive Layout Density</span><span>90%</span></div>
-<div class="w-full bg-navy-900 h-1.5 rounded-full overflow-hidden"><div class="bg-blue-400 h-full rounded-full" style="width: 90%"></div></div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden"><div class="bg-blue-500 h-full rounded-full" style="width: 90%"></div></div>
 </div>
 </div>
-<div class="bg-navy-950 border border-slate-800 p-6 rounded-xl space-y-4 reveal">
+<div class="bg-slate-50 border border-slate-200 p-6 rounded-xl space-y-4 reveal">
 <div class="flex justify-between items-center">
-<span class="text-3xl text-amber-400"><i class="fab fa-js"></i></span>
-<span class="bg-amber-400/10 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded font-mono">JS Engine</span>
+<span class="text-3xl text-amber-500"><i class="fab fa-js"></i></span>
+<span class="bg-amber-100 text-amber-600 text-[10px] font-bold px-2 py-0.5 rounded font-mono">JS Engine</span>
 </div>
-<h3 class="font-slab text-base font-bold text-white uppercase tracking-wider">Vanilla Interactions</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Use JavaScript for secure functionality, dynamic content, user interactions, form validation, data handling, animations, and real-time updates.</p>
+<h3 class="font-slab text-base font-bold text-slate-900 uppercase tracking-wider">Vanilla Interactions</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Use JavaScript for secure functionality, dynamic content, user interactions, form validation, data handling, animations, and real-time updates.</p>
 <div class="space-y-1">
 <div class="flex justify-between text-[10px] text-slate-500 font-bold"><span>DOM Sync Processing</span><span>88%</span></div>
-<div class="w-full bg-navy-900 h-1.5 rounded-full overflow-hidden"><div class="bg-amber-400 h-full rounded-full" style="width: 88%"></div></div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden"><div class="bg-amber-500 h-full rounded-full" style="width: 88%"></div></div>
 </div>
 </div>
-<div class="bg-navy-950 border border-slate-800 p-6 rounded-xl space-y-4 reveal">
+<div class="bg-slate-50 border border-slate-200 p-6 rounded-xl space-y-4 reveal">
 <div class="flex justify-between items-center">
-<span class="text-3xl text-emerald-400"><i class="fas fa-database"></i></span>
-<span class="bg-emerald-400/10 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded font-mono">SQL / API</span>
+<span class="text-3xl text-emerald-500"><i class="fas fa-database"></i></span>
+<span class="bg-emerald-100 text-emerald-600 text-[10px] font-bold px-2 py-0.5 rounded font-mono">SQL / API</span>
 </div>
-<h3 class="font-slab text-base font-bold text-white uppercase tracking-wider">Dynamic Servers</h3>
-<p class="text-slate-400 text-xs leading-relaxed">Develop back-end functionality for secure data storage, authentication, dashboards, reports, user permissions, forms, and dynamic website management.</p>
+<h3 class="font-slab text-base font-bold text-slate-900 uppercase tracking-wider">Dynamic Servers</h3>
+<p class="text-slate-500 text-xs leading-relaxed">Develop back-end functionality for secure data storage, authentication, dashboards, reports, user permissions, forms, and dynamic website management.</p>
 <div class="space-y-1">
 <div class="flex justify-between text-[10px] text-slate-500 font-bold"><span>Server Side Data Security</span><span>92%</span></div>
-<div class="w-full bg-navy-900 h-1.5 rounded-full overflow-hidden"><div class="bg-emerald-400 h-full rounded-full" style="width: 92%"></div></div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden"><div class="bg-emerald-500 h-full rounded-full" style="width: 92%"></div></div>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- CM017 - Strategic Core Content Model -->
-<section class="py-20 bg-navy-950">
+<!-- CM033 - Strategic Core Content Model HTML -->
+<section class="py-20 bg-slate-50">
 <div class="max-w-7xl mx-auto px-4">
 <div class="grid lg:grid-cols-2 gap-12 items-center">
 <div class="space-y-6 reveal">
-<span class="text-gold-500 font-bold tracking-wider uppercase text-xs">Architectural Logic Mapping</span>
-<h2 class="font-slab text-3xl sm:text-4xl font-bold text-white tracking-tight">A Website That Represents Your Organization</h2>
-<p class="text-slate-400 text-sm leading-relaxed">
+<span class="text-gold-700 font-bold tracking-wider uppercase text-xs">Architectural Logic Mapping</span>
+<h2 class="font-slab text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">A Website That Represents Your Organization</h2>
+<p class="text-slate-600 text-sm leading-relaxed">
 To design a website that accurately reflects your business, we configure the layout and content around key structural questions. This guarantees that your platforms are tailor-made for your audience instead of relying on standard templates.
 </p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="p-4 bg-navy-900 border border-slate-850 rounded">
-<h4 class="font-bold text-white text-xs uppercase tracking-wider mb-1">1. Who are you?</h4>
-<p class="text-[11px] text-slate-400 leading-relaxed">Defining your brand story, core values, mission, and identity.</p>
+<div class="p-4 bg-white border border-slate-200 rounded shadow-sm">
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">1. Who are you?</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed">Defining your brand story, core values, mission, and identity.</p>
 </div>
-<div class="p-4 bg-navy-900 border border-slate-850 rounded">
-<h4 class="font-bold text-white text-xs uppercase tracking-wider mb-1">2. What do you provide?</h4>
-<p class="text-[11px] text-slate-400 leading-relaxed">Showing services and features clearly with smooth navigation paths.</p>
+<div class="p-4 bg-white border border-slate-200 rounded shadow-sm">
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">2. What do you provide?</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed">Showing services and features clearly with smooth navigation paths.</p>
 </div>
-<div class="p-4 bg-navy-900 border border-slate-850 rounded">
-<h4 class="font-bold text-white text-xs uppercase tracking-wider mb-1">3. Why do you exist?</h4>
-<p class="text-[11px] text-slate-400 leading-relaxed">Explaining the primary goal, values, and vision of your group.</p>
+<div class="p-4 bg-white border border-slate-200 rounded shadow-sm">
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">3. Why do you exist?</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed">Explaining the primary goal, values, and vision of your group.</p>
 </div>
-<div class="p-4 bg-navy-900 border border-slate-850 rounded">
-<h4 class="font-bold text-white text-xs uppercase tracking-wider mb-1">4. What makes you special?</h4>
-<p class="text-[11px] text-slate-400 leading-relaxed">Focusing on your competitive advantages and top-tier features.</p>
+<div class="p-4 bg-white border border-slate-200 rounded shadow-sm">
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">4. What makes you special?</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed">Focusing on your competitive advantages and top-tier features.</p>
 </div>
-<div class="p-4 bg-navy-900 border border-slate-850 rounded">
-<h4 class="font-bold text-white text-xs uppercase tracking-wider mb-1">5. Who are your staff?</h4>
-<p class="text-[11px] text-slate-400 leading-relaxed">Introducing team members, professional backgrounds, and credentials.</p>
+<div class="p-4 bg-white border border-slate-200 rounded shadow-sm">
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">5. Who are your staff?</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed">Introducing team members, professional backgrounds, and credentials.</p>
 </div>
-<div class="p-4 bg-navy-900 border border-slate-850 rounded">
-<h4 class="font-bold text-white text-xs uppercase tracking-wider mb-1">6. Who are administrators?</h4>
-<p class="text-[11px] text-slate-400 leading-relaxed">Mapping systems controls, data permissions, and roles.</p>
+<div class="p-4 bg-white border border-slate-200 rounded shadow-sm">
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">6. Who are administrators?</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed">Mapping systems controls, data permissions, and roles.</p>
 </div>
-<div class="p-4 bg-navy-900 border border-slate-850 rounded">
-<h4 class="font-bold text-white text-xs uppercase tracking-wider mb-1">7. Who are your users?</h4>
-<p class="text-[11px] text-slate-400 leading-relaxed">Customizing user interfaces for students, patients, or devotee groups.</p>
+<div class="p-4 bg-white border border-slate-200 rounded shadow-sm">
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">7. Who are your users?</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed">Customizing user interfaces for students, patients, or devotee groups.</p>
 </div>
-<div class="p-4 bg-navy-900 border border-slate-850 rounded">
-<h4 class="font-bold text-white text-xs uppercase tracking-wider mb-1">8. How can people reach you?</h4>
-<p class="text-[11px] text-slate-400 leading-relaxed">Enabling seamless registration, contact pipelines, maps, and forms.</p>
+<div class="p-4 bg-white border border-slate-200 rounded shadow-sm">
+<h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">8. How can people reach you?</h4>
+<p class="text-[11px] text-slate-500 leading-relaxed">Enabling seamless registration, contact pipelines, maps, and forms.</p>
 </div>
 </div>
 </div>
-<div class="bg-navy-900 border border-slate-800 rounded-2xl p-6 relative overflow-hidden reveal">
-<div class="absolute -top-20 -right-20 w-48 h-48 bg-gold-500/5 rounded-full blur-3xl"></div>
-<h3 class="font-slab text-lg font-bold text-gold-500 mb-4 flex items-center gap-2">
-<i class="fas fa-sitemap text-sm"></i> Sri Veda Core Development Model
-</h3>
-<p class="text-xs text-slate-400 leading-relaxed mb-4">
+<div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-sm reveal">
+<div class="absolute -top-20 -right-20 w-48 h-48 bg-amber-50 rounded-full blur-3xl"></div>
+<h3 class="font-slab text-lg font-bold text-gold-700 mb-4 flex items-center gap-2"><i class="fas fa-sitemap text-sm"></i> Sri Veda Core Development Model</h3>
+<p class="text-xs text-slate-500 leading-relaxed mb-4">
 We design the entire structural, database, and visual flow based on your answers. This dynamic architectural alignment guarantees clear operation, trust, and faster loading speeds.
 </p>
 <div class="space-y-3.5 font-mono text-xs">
-<div class="flex items-center gap-3 bg-navy-950 p-3 rounded border border-slate-850">
-<span class="h-6 w-6 bg-gold-500/10 text-gold-500 rounded flex items-center justify-center font-bold">1</span>
+<div class="flex items-center gap-3 bg-slate-50 p-3 rounded border border-slate-200">
+<span class="h-6 w-6 bg-amber-100 text-gold-700 rounded flex items-center justify-center font-bold">1</span>
 <div>
-<div class="font-bold text-white text-[11px]">Analysis & Role Mapping</div>
+<div class="font-bold text-slate-900 text-[11px]">Analysis & Role Mapping</div>
 <p class="text-[10px] text-slate-500">Studying client hierarchies, user types, and workflow rules.</p>
 </div>
 </div>
-<div class="flex items-center gap-3 bg-navy-950 p-3 rounded border border-slate-850">
-<span class="h-6 w-6 bg-blue-500/10 text-blue-400 rounded flex items-center justify-center font-bold">2</span>
+<div class="flex items-center gap-3 bg-slate-50 p-3 rounded border border-slate-200">
+<span class="h-6 w-6 bg-blue-100 text-blue-600 rounded flex items-center justify-center font-bold">2</span>
 <div>
-<div class="font-bold text-white text-[11px]">Server Base & Database Setup</div>
+<div class="font-bold text-slate-900 text-[11px]">Server Base & Database Setup</div>
 <p class="text-[10px] text-slate-500">Deploying on efficient platforms for quick loading and minimal cost.</p>
 </div>
 </div>
-<div class="flex items-center gap-3 bg-navy-950 p-3 rounded border border-slate-850">
-<span class="h-6 w-6 bg-emerald-500/10 text-emerald-400 rounded flex items-center justify-center font-bold">3</span>
+<div class="flex items-center gap-3 bg-slate-50 p-3 rounded border border-slate-200">
+<span class="h-6 w-6 bg-emerald-100 text-emerald-600 rounded flex items-center justify-center font-bold">3</span>
 <div>
-<div class="font-bold text-white text-[11px]">Deploying Interactive Portals</div>
+<div class="font-bold text-slate-900 text-[11px]">Deploying Interactive Portals</div>
 <p class="text-[10px] text-slate-500">Creating dynamic dashboards and custom reports with secure code.</p>
 </div>
 </div>
@@ -494,406 +502,396 @@ We design the entire structural, database, and visual flow based on your answers
 </div>
 </section>
 
-<!-- CM018 - Multi-Role Login Sandbox Section -->
-<section id="sandbox" class="py-20 bg-navy-900 border-y border-navy-800">
+<!-- CM034 - Multi-Role Login Sandbox Section HTML -->
+<section id="sandbox" class="py-20 bg-white border-y border-slate-200">
 <div class="max-w-7xl mx-auto px-4">
 <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-<span class="text-gold-500 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-navy-950 rounded border border-gold-500/20">Interactive Live Demonstration</span>
-<h2 class="font-slab text-3xl sm:text-4xl font-bold text-white mt-3 tracking-tight">Special Login Systems for Every User</h2>
-<p class="text-slate-400 mt-3 text-sm">Every user group gets dedicated features. Test our actual dynamic modules below to experience how access rules and database reports load dynamically.</p>
+<span class="text-gold-700 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-slate-50 rounded border border-slate-200">Interactive Live Demonstration</span>
+<h2 class="font-slab text-3xl sm:text-4xl font-bold text-slate-900 mt-3 tracking-tight">Special Login Systems for Every User</h2>
+<p class="text-slate-600 mt-3 text-sm">Every user group gets dedicated features. Test our actual dynamic modules below to experience how access rules and database reports load dynamically.</p>
 </div>
 <div class="grid lg:grid-cols-12 gap-8 items-start reveal">
-<div class="lg:col-span-4 bg-navy-950 border border-slate-850 p-5 rounded-xl space-y-4">
-<h4 class="font-slab font-bold text-white text-xs uppercase tracking-wider mb-2">1. Select Simulated Login Role:</h4>
+<div class="lg:col-span-4 bg-slate-50 border border-slate-200 p-5 rounded-xl space-y-4">
+<h4 class="font-slab font-bold text-slate-900 text-xs uppercase tracking-wider mb-2">1. Select Simulated Login Role:</h4>
 <div class="grid grid-cols-2 lg:grid-cols-1 gap-2">
-<button onclick="setSimulatedRole('Admin')" id="sim-role-btn-Admin" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-gold-500 text-navy-950 flex items-center gap-2"><i class="fas fa-shield-alt w-4"></i> Admin Login</button>
-<button onclick="setSimulatedRole('Staff')" id="sim-role-btn-Staff" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-navy-900 text-slate-300 hover:bg-slate-800 flex items-center gap-2"><i class="fas fa-id-badge w-4"></i> Staff Login</button>
-<button onclick="setSimulatedRole('Doctor')" id="sim-role-btn-Doctor" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-navy-900 text-slate-300 hover:bg-slate-800 flex items-center gap-2"><i class="fas fa-user-md w-4"></i> Doctor Login</button>
-<button onclick="setSimulatedRole('Teacher')" id="sim-role-btn-Teacher" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-navy-900 text-slate-300 hover:bg-slate-800 flex items-center gap-2"><i class="fas fa-chalkboard-teacher w-4"></i> Teacher Login</button>
-<button onclick="setSimulatedRole('Student')" id="sim-role-btn-Student" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-navy-900 text-slate-300 hover:bg-slate-800 flex items-center gap-2"><i class="fas fa-user-graduate w-4"></i> Student Login</button>
-<button onclick="setSimulatedRole('Customer')" id="sim-role-btn-Customer" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-navy-900 text-slate-300 hover:bg-slate-800 flex items-center gap-2"><i class="fas fa-shopping-bag w-4"></i> Customer Login</button>
-<button onclick="setSimulatedRole('User')" id="sim-role-btn-User" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-navy-900 text-slate-300 hover:bg-slate-800 flex items-center gap-2"><i class="fas fa-user w-4"></i> User Login</button>
+<button onclick="setSimulatedRole('Admin')" id="sim-role-btn-Admin" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-gold-500 text-white flex items-center gap-2 shadow-sm"><i class="fas fa-shield-alt w-4"></i> Admin Login</button>
+<button onclick="setSimulatedRole('Staff')" id="sim-role-btn-Staff" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 flex items-center gap-2"><i class="fas fa-id-badge w-4"></i> Staff Login</button>
+<button onclick="setSimulatedRole('Doctor')" id="sim-role-btn-Doctor" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 flex items-center gap-2"><i class="fas fa-user-md w-4"></i> Doctor Login</button>
+<button onclick="setSimulatedRole('Teacher')" id="sim-role-btn-Teacher" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 flex items-center gap-2"><i class="fas fa-chalkboard-teacher w-4"></i> Teacher Login</button>
+<button onclick="setSimulatedRole('Student')" id="sim-role-btn-Student" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 flex items-center gap-2"><i class="fas fa-user-graduate w-4"></i> Student Login</button>
+<button onclick="setSimulatedRole('Customer')" id="sim-role-btn-Customer" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 flex items-center gap-2"><i class="fas fa-shopping-bag w-4"></i> Customer Login</button>
+<button onclick="setSimulatedRole('User')" id="sim-role-btn-User" class="sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 flex items-center gap-2"><i class="fas fa-user w-4"></i> User Login</button>
 </div>
-<div class="text-[10px] text-slate-500 pt-3 border-t border-slate-850 leading-relaxed">
-<p class="font-bold text-slate-400 mb-1"><i class="fas fa-circle-info"></i> Dynamic Content Loading</p>
+<div class="text-[10px] text-slate-500 pt-3 border-t border-slate-200 leading-relaxed">
+<p class="font-bold text-slate-600 mb-1"><i class="fas fa-circle-info"></i> Dynamic Content Loading</p>
 Selecting a role loads the specific interface data and controls designed for that group.
 </div>
 </div>
-
-<!-- CM019 - Dynamic Sandbox Workspace -->
-<div class="lg:col-span-8 bg-navy-950 border border-slate-850 rounded-xl p-6 flex flex-col justify-between">
+<div class="lg:col-span-8 bg-slate-50 border border-slate-200 rounded-xl p-6 flex flex-col justify-between">
 <div>
-<div class="flex justify-between items-center border-b border-slate-850 pb-4 mb-4">
+<div class="flex justify-between items-center border-b border-slate-200 pb-4 mb-4">
 <div class="flex items-center gap-2">
 <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-<span class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Active Client Sandbox Module</span>
+<span class="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Active Client Sandbox Module</span>
 </div>
-<span id="live-time-stamp" class="font-mono text-[10px] text-slate-500">22:45:05 GMT+5:30</span>
+<span id="live-time-stamp" class="font-mono text-[10px] text-slate-400">22:45:05 GMT+5:30</span>
 </div>
 <div id="simulated-dashboard-content" class="space-y-4">
-<div class="p-4 bg-navy-900 border border-slate-800 rounded">
+<div class="p-4 bg-white border border-slate-200 rounded shadow-sm">
 <div class="flex items-center justify-between mb-2">
-<h5 class="text-xs font-bold text-gold-500 flex items-center gap-2"><i class="fas fa-shield-alt"></i> ADMINISTRATOR SYSTEM CONTROL PANEL</h5>
-<span class="text-[9px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-mono font-bold uppercase">System Root</span>
+<h5 class="text-xs font-bold text-gold-700 flex items-center gap-2"><i class="fas fa-shield-alt"></i> ADMINISTRATOR SYSTEM CONTROL PANEL</h5>
+<span class="text-[9px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-mono font-bold uppercase">System Root</span>
 </div>
-<p class="text-xs text-slate-400 leading-relaxed">
-Administrator receives full management dashboards, complete system database queries, OP consultation entries, and master credential access logs.
-</p>
+<p class="text-xs text-slate-500 leading-relaxed">Administrator receives full management dashboards, complete system database queries, OP consultation entries, and master credential access logs.</p>
 <div class="grid grid-cols-3 gap-3 mt-4">
-<div class="bg-navy-950 p-2.5 rounded border border-slate-850 text-center">
+<div class="bg-slate-50 p-2.5 rounded border border-slate-200 text-center">
 <span class="text-[9px] text-slate-500 block uppercase font-bold">Total Clients Logged</span>
-<span class="text-sm font-bold text-white font-mono mt-0.5 block">1,842</span>
+<span class="text-sm font-bold text-slate-900 font-mono mt-0.5 block">1,842</span>
 </div>
-<div class="bg-navy-950 p-2.5 rounded border border-slate-850 text-center">
+<div class="bg-slate-50 p-2.5 rounded border border-slate-200 text-center">
 <span class="text-[9px] text-slate-500 block uppercase font-bold">Cloud Server load</span>
-<span class="text-sm font-bold text-emerald-400 font-mono mt-0.5 block">0.03%</span>
+<span class="text-sm font-bold text-emerald-600 font-mono mt-0.5 block">0.03%</span>
 </div>
-<div class="bg-navy-950 p-2.5 rounded border border-slate-850 text-center">
+<div class="bg-slate-50 p-2.5 rounded border border-slate-200 text-center">
 <span class="text-[9px] text-slate-500 block uppercase font-bold">Realtime SQL queries</span>
-<span class="text-sm font-bold text-gold-500 font-mono mt-0.5 block">Active</span>
+<span class="text-sm font-bold text-gold-700 font-mono mt-0.5 block">Active</span>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="mt-6 pt-4 border-t border-slate-850 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-<span class="text-slate-500">Server Identity Protection: <strong class="text-emerald-400">Verifying secure routes</strong></span>
-<button onclick="requestQuotationModal('Premium Plan')" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold px-4 py-2 rounded text-[10px] uppercase tracking-wider transition-all">Build This System</button>
+<div class="mt-6 pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+<span class="text-slate-500">Server Identity Protection: <strong class="text-emerald-600">Verifying secure routes</strong></span>
+<button onclick="triggerContactAlert()" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-600 text-white font-bold px-4 py-2 rounded text-[10px] uppercase tracking-wider transition-all shadow-md">Build This System</button>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- CM020 - Attendance Management Technical Panel -->
-<section class="py-20 bg-navy-950 border-b border-navy-900">
+<!-- CM035 - Attendance Management Technical Panel HTML -->
+<section class="py-20 bg-slate-50 border-b border-slate-200">
 <div class="max-w-7xl mx-auto px-4">
 <div class="grid lg:grid-cols-2 gap-12 items-center">
 <div class="space-y-6 reveal">
-<span class="text-gold-500 font-bold uppercase tracking-wider text-xs">Dynamic Tracking Solutions</span>
-<h2 class="font-slab text-3xl sm:text-4xl font-bold text-white tracking-tight">Real-Time Attendance and Dynamic Customer Data Management</h2>
-<p class="text-slate-400 text-sm leading-relaxed">
+<span class="text-gold-700 font-bold uppercase tracking-wider text-xs">Dynamic Tracking Solutions</span>
+<h2 class="font-slab text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Real-Time Attendance and Dynamic Customer Data Management</h2>
+<p class="text-slate-600 text-sm leading-relaxed">
 Sri Veda Organization develops high-performance digital tracking structures. We configure custom registration systems where employees, teachers, students, doctors, or devotees can instantly check in and check out.
 </p>
-<p class="text-slate-400 text-sm leading-relaxed">
+<p class="text-slate-600 text-sm leading-relaxed">
 This attendance and transaction data updates immediately across the website and becomes visible to administrators. Our systems are built with secure coding practices, controlled database access, validation rules, and role-based permissions.
 </p>
-<div class="grid grid-cols-2 gap-4 text-xs font-mono">
-<div class="flex items-center gap-2"><i class="fas fa-check-circle text-gold-500"></i> Real-time check-in/out</div>
-<div class="flex items-center gap-2"><i class="fas fa-file-invoice text-gold-500"></i> Dynamic reports</div>
-<div class="flex items-center gap-2"><i class="fas fa-clock text-gold-500"></i> Date & time recording</div>
-<div class="flex items-center gap-2"><i class="fas fa-user-tag text-gold-500"></i> Role-based data</div>
+<div class="grid grid-cols-2 gap-4 text-xs font-mono text-slate-700">
+<div class="flex items-center gap-2"><i class="fas fa-check-circle text-gold-600"></i> Real-time check-in/out</div>
+<div class="flex items-center gap-2"><i class="fas fa-file-invoice text-gold-600"></i> Dynamic reports</div>
+<div class="flex items-center gap-2"><i class="fas fa-clock text-gold-600"></i> Date & time recording</div>
+<div class="flex items-center gap-2"><i class="fas fa-user-tag text-gold-600"></i> Role-based data</div>
 </div>
 </div>
-<div class="bg-navy-900 border border-slate-800 rounded-xl p-6 space-y-6 reveal">
-<div class="border-b border-slate-800 pb-3">
-<h3 class="font-slab text-base font-bold text-gold-500">Test Live Attendance Punch Log</h3>
-<p class="text-[11px] text-slate-400 mt-1">Enter your name and test our real-time tracking script.</p>
+<div class="bg-white border border-slate-200 rounded-xl p-6 space-y-6 shadow-sm reveal">
+<div class="border-b border-slate-100 pb-3">
+<h3 class="font-slab text-base font-bold text-gold-700">Test Live Attendance Punch Log</h3>
+<p class="text-[11px] text-slate-500 mt-1">Enter your name and test our real-time tracking script.</p>
 </div>
 <div class="space-y-3">
 <div>
 <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Punch Username / Designation:</label>
-<input type="text" id="attendance-user-name" value="Srinivas Rao (Doctor)" class="w-full bg-navy-950 border border-slate-850 rounded px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold-500 font-mono">
+<input type="text" id="attendance-user-name" value="Srinivas Rao (Doctor)" class="w-full bg-slate-50 border border-slate-300 rounded px-3.5 py-2 text-xs text-slate-900 focus:outline-none focus:border-gold-600 font-mono">
 </div>
 <div class="grid grid-cols-2 gap-2">
-<button onclick="triggerAttendancePunch('IN')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded text-xs uppercase tracking-wider"><i class="fas fa-sign-in-alt mr-1"></i> Punch In</button>
-<button onclick="triggerAttendancePunch('OUT')" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-2.5 rounded text-xs uppercase tracking-wider"><i class="fas fa-sign-out-alt mr-1"></i> Punch Out</button>
+<button onclick="triggerAttendancePunch('IN')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded text-xs uppercase tracking-wider shadow-sm"><i class="fas fa-sign-in-alt mr-1"></i> Punch In</button>
+<button onclick="triggerAttendancePunch('OUT')" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-2.5 rounded text-xs uppercase tracking-wider shadow-sm"><i class="fas fa-sign-out-alt mr-1"></i> Punch Out</button>
 </div>
 </div>
-<div class="bg-navy-950 border border-slate-850 rounded p-4">
-<div class="flex justify-between items-center mb-2 border-b border-slate-850 pb-2">
-<span class="text-[10px] font-mono font-bold text-gold-500 uppercase tracking-widest">Realtime Feed</span>
-<button onclick="clearPunchTerminal()" class="text-[9px] text-slate-500 hover:text-slate-300 font-bold uppercase">Clear</button>
+<div class="bg-slate-50 border border-slate-200 rounded p-4">
+<div class="flex justify-between items-center mb-2 border-b border-slate-200 pb-2">
+<span class="text-[10px] font-mono font-bold text-gold-700 uppercase tracking-widest">Realtime Feed</span>
+<button onclick="clearPunchTerminal()" class="text-[9px] text-slate-500 hover:text-slate-700 font-bold uppercase">Clear</button>
 </div>
-<div id="attendance-log-shell" class="space-y-2 h-32 overflow-y-auto font-mono text-[10px] text-slate-400 custom-scrollbar">
-<p class="text-slate-500 italic text-center pt-8" id="no-punches-placeholder">[No active logs in current session. Submit a punch to test.]</p>
-</div>
-</div>
+<div id="attendance-log-shell" class="space-y-2 h-32 overflow-y-auto font-mono text-[10px] text-slate-600 custom-scrollbar">
+<p class="text-slate-400 italic text-center pt-8" id="no-punches-placeholder">[No active logs in current session. Submit a punch to test.]</p>
 </div>
 </div>
-</div>
-</section>
-
-<!-- CM021 - Industries Target Segments Section -->
-<section id="industries" class="py-20 bg-navy-900 border-b border-navy-850">
-<div class="max-w-7xl mx-auto px-4">
-<div class="text-center max-w-3xl mx-auto mb-16 reveal">
-<span class="text-gold-500 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-navy-950 rounded border border-gold-500/20">Target Industries</span>
-<h2 class="font-slab text-3xl sm:text-4xl font-bold text-white mt-3 tracking-tight">Websites for Every Type of Organization</h2>
-<p class="text-slate-400 mt-3 text-sm">We plan and develop layouts matching the daily tasks, logistics, and target audience of each market segment.</p>
-</div>
-<div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-<div class="bg-navy-950 border border-slate-850 p-6 rounded-xl text-center space-y-4 hover-gold-glow transition-all reveal">
-<div class="h-12 w-12 bg-navy-900 text-rose-500 rounded-full flex items-center justify-center text-xl mx-auto"><i class="fas fa-hospital-user"></i></div>
-<h3 class="font-slab font-bold text-white text-sm uppercase tracking-wider">Hospitals</h3>
-<p class="text-[11px] text-slate-400 leading-relaxed">OP management, doctor availability grids, consultation appointments, and patient registration reports.</p>
-</div>
-<div class="bg-navy-950 border border-slate-850 p-6 rounded-xl text-center space-y-4 hover-gold-glow transition-all reveal">
-<div class="h-12 w-12 bg-navy-900 text-amber-500 rounded-full flex items-center justify-center text-xl mx-auto"><i class="fas fa-gopuram"></i></div>
-<h3 class="font-slab font-bold text-white text-sm uppercase tracking-wider">Temples</h3>
-<p class="text-[11px] text-slate-400 leading-relaxed">Puja timetables, historical Seva bookings, secure dynamic donations, pilgrim updates, and photo galleries.</p>
-</div>
-<div class="bg-navy-950 border border-slate-850 p-6 rounded-xl text-center space-y-4 hover-gold-glow transition-all reveal">
-<div class="h-12 w-12 bg-navy-900 text-sky-400 rounded-full flex items-center justify-center text-xl mx-auto"><i class="fas fa-school"></i></div>
-<h3 class="font-slab font-bold text-white text-sm uppercase tracking-wider">Schools</h3>
-<p class="text-[11px] text-slate-400 leading-relaxed">Student registers, homework status grids, marks cards, parent portals, and dynamic calendars.</p>
-</div>
-<div class="bg-navy-950 border border-slate-850 p-6 rounded-xl text-center space-y-4 hover-gold-glow transition-all reveal">
-<div class="h-12 w-12 bg-navy-900 text-indigo-400 rounded-full flex items-center justify-center text-xl mx-auto"><i class="fas fa-hands-helping"></i></div>
-<h3 class="font-slab font-bold text-white text-sm uppercase tracking-wider">Organizations</h3>
-<p class="text-[11px] text-slate-400 leading-relaxed">Community dashboards, membership databases, dynamic events, and file library repositories.</p>
-</div>
-<div class="bg-navy-950 border border-slate-850 p-6 rounded-xl text-center space-y-4 hover-gold-glow transition-all reveal">
-<div class="h-12 w-12 bg-navy-900 text-emerald-400 rounded-full flex items-center justify-center text-xl mx-auto"><i class="fas fa-building"></i></div>
-<h3 class="font-slab font-bold text-white text-sm uppercase tracking-wider">Companies</h3>
-<p class="text-[11px] text-slate-400 leading-relaxed">Corporate presentation profiles, active product catalog, client query forms, and employee dashboards.</p>
 </div>
 </div>
 </div>
 </section>
 
-<!-- CM022 - Production Ready Portals Section -->
-<section id="projects" class="py-20 bg-navy-950">
+<!-- CM037 - Production Ready Portals Section HTML -->
+<section id="projects" class="py-20 bg-slate-50">
 <div class="max-w-7xl mx-auto px-4">
 <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-<span class="text-gold-500 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-navy-900 rounded border border-gold-500/20">Active Deployments</span>
-<h2 class="font-slab text-3xl sm:text-4xl font-bold text-white mt-3 tracking-tight">Our Recent Projects</h2>
-<p class="text-slate-400 mt-3 text-sm">We design, build, and deploy secure portals. Explore our active projects configured on premium edge environments.</p>
+<span class="text-gold-700 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-white rounded border border-slate-200">Active Deployments</span>
+<h2 class="font-slab text-3xl sm:text-4xl font-bold text-slate-900 mt-3 tracking-tight">Our Recent Projects</h2>
+<p class="text-slate-600 mt-3 text-sm">We design, build, and deploy secure portals. Explore our active projects configured on premium edge environments.</p>
 </div>
-<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="bg-navy-900 border border-slate-850 rounded-xl overflow-hidden premium-card flex flex-col justify-between reveal">
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden premium-card flex flex-col justify-between shadow-sm reveal">
 <div class="p-6 space-y-4">
 <div class="flex justify-between items-start">
-<span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[9px] font-bold font-mono px-2.5 py-1 rounded uppercase tracking-wider"><i class="fas fa-circle-check mr-1 animate-pulse"></i> Completed</span>
-<span class="text-slate-500 text-sm"><i class="fas fa-globe"></i></span>
+<span class="bg-emerald-100 text-emerald-700 border border-emerald-200 text-[9px] font-bold font-mono px-2.5 py-1 rounded uppercase tracking-wider"><i class="fas fa-circle-check mr-1 animate-pulse"></i> Completed</span>
+<span class="text-slate-400 text-sm"><i class="fas fa-globe"></i></span>
 </div>
-<h3 class="font-slab font-bold text-white text-lg tracking-wide">SVTC Life</h3>
+<h3 class="font-slab font-bold text-slate-900 text-lg tracking-wide">SVTC Life</h3>
 <p class="text-[11px] text-slate-500 uppercase font-mono">Category: Community & Enterprise System</p>
-<p class="text-slate-400 text-xs leading-relaxed">
-Sri Veda created the custom community platform <strong class="text-slate-200">svtc.life</strong>. This layout handles memberships, custom registers, catalogs, and dynamic admin panel updates on cost-free, high-performance hostings.
+<p class="text-slate-600 text-xs leading-relaxed">
+Sri Veda created the custom community platform <strong class="text-slate-800">svtc.life</strong>. This layout handles memberships, custom registers, catalogs, and dynamic admin panel updates on cost-free, high-performance hostings.
 </p>
 </div>
 <div class="p-6 pt-0">
-<a href="https://svtc.life" target="_blank" class="block w-full text-center bg-navy-950 hover:bg-gold-500 hover:text-navy-950 text-gold-500 font-bold py-2.5 rounded text-xs uppercase tracking-widest transition-all">Visit Website</a>
+<a href="" id="link-svtc" target="_blank" class="block w-full text-center bg-slate-50 hover:bg-gold-500 hover:text-white text-gold-700 font-bold py-2.5 rounded text-xs uppercase tracking-widest transition-all border border-slate-200 hover:border-gold-500">Visit Website</a>
 </div>
 </div>
-<div class="bg-navy-900 border border-slate-850 rounded-xl overflow-hidden premium-card flex flex-col justify-between reveal">
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden premium-card flex flex-col justify-between shadow-sm reveal">
 <div class="p-6 space-y-4">
 <div class="flex justify-between items-start">
-<span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[9px] font-bold font-mono px-2.5 py-1 rounded uppercase tracking-wider"><i class="fas fa-circle-check mr-1 animate-pulse"></i> Completed</span>
-<span class="text-slate-500 text-sm"><i class="fas fa-hospital"></i></span>
+<span class="bg-emerald-100 text-emerald-700 border border-emerald-200 text-[9px] font-bold font-mono px-2.5 py-1 rounded uppercase tracking-wider"><i class="fas fa-circle-check mr-1 animate-pulse"></i> Completed</span>
+<span class="text-slate-400 text-sm"><i class="fas fa-hospital"></i></span>
 </div>
-<h3 class="font-slab font-bold text-white text-lg tracking-wide">Dr. VSR Hospital</h3>
+<h3 class="font-slab font-bold text-slate-900 text-lg tracking-wide">Dr. VSR Hospital</h3>
 <p class="text-[11px] text-slate-500 uppercase font-mono">Category: Hospital Registry Portal</p>
-<p class="text-slate-400 text-xs leading-relaxed">
+<p class="text-slate-600 text-xs leading-relaxed">
 Complete medical system supporting doctor timetables, department catalogs, secure data handling, and dynamic patient reservation queries. Built on highly optimized client servers.
 </p>
 </div>
 <div class="p-6 pt-0">
-<a href="https://drvsrhospital.in" target="_blank" class="block w-full text-center bg-navy-950 hover:bg-gold-500 hover:text-navy-950 text-gold-500 font-bold py-2.5 rounded text-xs uppercase tracking-widest transition-all">Visit Website</a>
+<a href="" id="link-drvsr" target="_blank" class="block w-full text-center bg-slate-50 hover:bg-gold-500 hover:text-white text-gold-700 font-bold py-2.5 rounded text-xs uppercase tracking-widest transition-all border border-slate-200 hover:border-gold-500">Visit Website</a>
 </div>
 </div>
-<div class="bg-navy-900 border border-slate-850 rounded-xl overflow-hidden premium-card flex flex-col justify-between reveal">
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden premium-card flex flex-col justify-between shadow-sm reveal">
 <div class="p-6 space-y-4">
 <div class="flex justify-between items-start">
-<span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[9px] font-bold font-mono px-2.5 py-1 rounded uppercase tracking-wider"><i class="fas fa-circle-check mr-1 animate-pulse"></i> Completed</span>
-<span class="text-slate-500 text-sm"><i class="fas fa-briefcase-medical"></i></span>
+<span class="bg-emerald-100 text-emerald-700 border border-emerald-200 text-[9px] font-bold font-mono px-2.5 py-1 rounded uppercase tracking-wider"><i class="fas fa-circle-check mr-1 animate-pulse"></i> Completed</span>
+<span class="text-slate-400 text-sm"><i class="fas fa-briefcase-medical"></i></span>
 </div>
-<h3 class="font-slab font-bold text-white text-lg tracking-wide">Sanjeeva Hospital</h3>
+<h3 class="font-slab font-bold text-slate-900 text-lg tracking-wide">Sanjeeva Hospital</h3>
 <p class="text-[11px] text-slate-500 uppercase font-mono">Category: Clinical Administration</p>
-<p class="text-slate-400 text-xs leading-relaxed">
+<p class="text-slate-600 text-xs leading-relaxed">
 Modern medical presentation website showcasing clinical departments, active doctor slots, patient registration forms, and secure administrative reporting channels.
 </p>
 </div>
 <div class="p-6 pt-0">
-<a href="https://sanjeevahospital.in" target="_blank" class="block w-full text-center bg-navy-950 hover:bg-gold-500 hover:text-navy-950 text-gold-500 font-bold py-2.5 rounded text-xs uppercase tracking-widest transition-all">Visit Website</a>
+<a href="" id="link-sanjeeva" target="_blank" class="block w-full text-center bg-slate-50 hover:bg-gold-500 hover:text-white text-gold-700 font-bold py-2.5 rounded text-xs uppercase tracking-widest transition-all border border-slate-200 hover:border-gold-500">Visit Website</a>
 </div>
 </div>
-<div class="bg-navy-900 border border-slate-850 rounded-xl overflow-hidden premium-card flex flex-col justify-between reveal">
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden premium-card flex flex-col justify-between shadow-sm reveal">
 <div class="p-6 space-y-4">
 <div class="flex justify-between items-start">
-<span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[9px] font-bold font-mono px-2.5 py-1 rounded uppercase tracking-wider"><i class="fas fa-spinner mr-1 animate-spin"></i> In Development</span>
-<span class="text-slate-500 text-sm"><i class="fas fa-gopuram"></i></span>
+<span class="bg-amber-100 text-amber-600 border border-amber-200 text-[9px] font-bold font-mono px-2.5 py-1 rounded uppercase tracking-wider"><i class="fas fa-spinner mr-1 animate-spin"></i> In Development</span>
+<span class="text-slate-400 text-sm"><i class="fas fa-gopuram"></i></span>
 </div>
-<h3 class="font-slab font-bold text-white text-lg tracking-wide">Ahobilam Temple</h3>
+<h3 class="font-slab font-bold text-slate-900 text-lg tracking-wide">Ahobilam Temple</h3>
 <p class="text-[11px] text-slate-500 uppercase font-mono">Category: Pilgrim Booking Services</p>
-<p class="text-slate-400 text-xs leading-relaxed">
+<p class="text-slate-600 text-xs leading-relaxed">
 Dynamic temple portal in development for managing Seva bookings, donation registers, visitor tracking, dynamic schedules, and comprehensive administrative dashboards.
 </p>
 </div>
 <div class="p-6 pt-0">
-<a href="https://ahobilamtemple.org" target="_blank" class="block w-full text-center bg-navy-950 hover:bg-gold-500 hover:text-navy-950 text-gold-500 font-bold py-2.5 rounded text-xs uppercase tracking-widest transition-all">Visit Website</a>
+<a href="" id="link-ahobilam" target="_blank" class="block w-full text-center bg-slate-50 hover:bg-gold-500 hover:text-white text-gold-700 font-bold py-2.5 rounded text-xs uppercase tracking-widest transition-all border border-slate-200 hover:border-gold-500">Visit Website</a>
+</div>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden premium-card flex flex-col justify-between shadow-sm reveal">
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<span class="bg-amber-100 text-amber-600 border border-amber-200 text-[9px] font-bold font-mono px-2.5 py-1 rounded uppercase tracking-wider"><i class="fas fa-spinner mr-1 animate-spin"></i> In Development</span>
+<span class="text-slate-400 text-sm"><i class="fas fa-tooth"></i></span>
+</div>
+<h3 class="font-slab font-bold text-slate-900 text-lg tracking-wide">Krishna Hospital</h3>
+<p class="text-[11px] text-slate-500 uppercase font-mono">Category: Children's & Dental Hospital</p>
+<p class="text-slate-600 text-xs leading-relaxed">
+Specialized pediatric and dental care portal in development, featuring active doctor schedules, service catalogs, and patient queue management systems.
+</p>
+</div>
+<div class="p-6 pt-0">
+<button onclick="triggerContactAlert()" class="block w-full text-center bg-slate-50 hover:bg-gold-500 hover:text-white text-gold-700 font-bold py-2.5 rounded text-xs uppercase tracking-widest transition-all border border-slate-200 hover:border-gold-500">In Progress</button>
+</div>
+</div>
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden premium-card flex flex-col justify-between shadow-sm reveal">
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<span class="bg-amber-100 text-amber-600 border border-amber-200 text-[9px] font-bold font-mono px-2.5 py-1 rounded uppercase tracking-wider"><i class="fas fa-spinner mr-1 animate-spin"></i> In Development</span>
+<span class="text-slate-400 text-sm"><i class="fas fa-notes-medical"></i></span>
+</div>
+<h3 class="font-slab font-bold text-slate-900 text-lg tracking-wide">Ramakrishna Hospital</h3>
+<p class="text-[11px] text-slate-500 uppercase font-mono">Category: Clinical Administration</p>
+<p class="text-slate-600 text-xs leading-relaxed">
+Comprehensive healthcare management system in development for streamlined patient registrations, medical records, and digital consultation reports.
+</p>
+</div>
+<div class="p-6 pt-0">
+<button onclick="triggerContactAlert()" class="block w-full text-center bg-slate-50 hover:bg-gold-500 hover:text-white text-gold-700 font-bold py-2.5 rounded text-xs uppercase tracking-widest transition-all border border-slate-200 hover:border-gold-500">In Progress</button>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- CM023 - Customized Development Plans Section -->
-<section id="plans" class="py-20 bg-navy-900 border-y border-navy-850">
+<!-- CM038 - Customized Development Plans Section HTML -->
+<section id="plans" class="py-20 bg-white border-y border-slate-200">
 <div class="max-w-7xl mx-auto px-4">
 <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-<span class="text-gold-500 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-navy-950 rounded border border-gold-500/20">Development Pricing</span>
-<h2 class="font-slab text-3xl sm:text-4xl font-bold text-white mt-3 tracking-tight">Choose the Right Development Plan</h2>
-<p class="text-slate-400 mt-3 text-sm">We analyze each organization's custom requirements before sending a clear proposal. No hidden costs.</p>
+<span class="text-gold-700 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-slate-50 rounded border border-slate-200">Development Pricing</span>
+<h2 class="font-slab text-3xl sm:text-4xl font-bold text-slate-900 mt-3 tracking-tight">Choose the Right Development Plan</h2>
+<p class="text-slate-600 mt-3 text-sm">We analyze each organization's custom requirements before sending a clear proposal. No hidden costs.</p>
 </div>
 <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-<div class="bg-navy-950 border border-slate-850 p-8 rounded-2xl flex flex-col justify-between hover-gold-glow transition-all reveal">
+<div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl flex flex-col justify-between hover-gold-glow transition-all shadow-sm reveal">
 <div>
-<h3 class="font-slab text-xl font-bold text-white uppercase tracking-wider">Basic Plan</h3>
+<h3 class="font-slab text-xl font-bold text-slate-900 uppercase tracking-wider">Basic Plan</h3>
 <p class="text-slate-500 text-xs mt-1">Ideal for small organizations and simple dynamic business cards.</p>
-<div class="my-6 py-4 border-y border-slate-850">
-<span class="text-lg font-bold text-gold-500 uppercase tracking-widest font-mono">Custom Proposal</span>
+<div class="my-6 py-4 border-y border-slate-200">
+<span class="text-lg font-bold text-gold-700 uppercase tracking-widest font-mono">Custom Proposal</span>
 <span class="text-slate-500 text-[10px] block mt-1 uppercase">Based on final features</span>
 </div>
-<ul class="space-y-3 text-xs text-slate-300 font-mono">
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Up to 5 pages</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Responsive design</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Home, About, Services, Contact</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Basic enquiry form</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Mobile-friendly layout</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Basic SEO structure</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Social media links</li>
+<ul class="space-y-3 text-xs text-slate-600 font-mono">
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Up to 5 pages</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Responsive design</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Home, About, Services, Contact</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Basic enquiry form</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Mobile-friendly layout</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Basic SEO structure</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Social media links</li>
 </ul>
 </div>
 <div class="mt-8">
-<button onclick="requestQuotationModal('Basic Plan')" class="w-full bg-navy-900 hover:bg-gold-500 hover:text-navy-950 text-gold-500 font-bold py-3 rounded text-xs uppercase tracking-widest transition-all">Request Basic Plan</button>
+<button onclick="triggerContactAlert()" class="w-full bg-white hover:bg-gold-500 hover:text-white border border-slate-200 text-gold-700 font-bold py-3 rounded text-xs uppercase tracking-widest transition-all">Request Basic Plan</button>
 </div>
 </div>
-<div class="bg-navy-950 border-2 border-gold-500 p-8 rounded-2xl flex flex-col justify-between relative shadow-xl hover-gold-glow transition-all reveal">
-<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold-500 text-navy-950 font-bold px-4 py-1 rounded-full text-[9px] tracking-widest uppercase">Most Popular</div>
+<div class="bg-white border-2 border-gold-500 p-8 rounded-2xl flex flex-col justify-between relative shadow-xl hover-gold-glow transition-all reveal">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold-500 text-white font-bold px-4 py-1 rounded-full text-[9px] tracking-widest uppercase shadow-md">Most Popular</div>
 <div>
-<h3 class="font-slab text-xl font-bold text-white uppercase tracking-wider">Standard Plan</h3>
+<h3 class="font-slab text-xl font-bold text-slate-900 uppercase tracking-wider">Standard Plan</h3>
 <p class="text-slate-500 text-xs mt-1">Excellent for growing companies needing deeper functional pipelines.</p>
-<div class="my-6 py-4 border-y border-slate-850">
-<span class="text-lg font-bold text-gold-500 uppercase tracking-widest font-mono">Custom Proposal</span>
+<div class="my-6 py-4 border-y border-slate-100">
+<span class="text-lg font-bold text-gold-700 uppercase tracking-widest font-mono">Custom Proposal</span>
 <span class="text-slate-500 text-[10px] block mt-1 uppercase">Recommended for interactive clients</span>
 </div>
-<ul class="space-y-3 text-xs text-slate-300 font-mono">
-<li><i class="fas fa-check text-gold-500 mr-2"></i> More than 10 pages</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Premium responsive design</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Dynamic content sections</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Contact & enquiry forms</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Dynamic image gallery</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Professional staff profiles</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Basic admin panel features</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Search functionality</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Speed optimization</li>
+<ul class="space-y-3 text-xs text-slate-600 font-mono">
+<li><i class="fas fa-check text-gold-600 mr-2"></i> More than 10 pages</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Premium responsive design</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Dynamic content sections</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Contact & enquiry forms</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Dynamic image gallery</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Professional staff profiles</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Basic admin panel features</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Search functionality</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Speed optimization</li>
 </ul>
 </div>
 <div class="mt-8">
-<button onclick="requestQuotationModal('Standard Plan')" class="w-full bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold py-3.5 rounded text-xs uppercase tracking-widest transition-all shadow-lg">Request Standard Plan</button>
+<button onclick="triggerContactAlert()" class="w-full bg-gold-500 hover:bg-gold-600 text-white font-bold py-3.5 rounded text-xs uppercase tracking-widest transition-all shadow-md">Request Standard Plan</button>
 </div>
 </div>
-<div class="bg-navy-950 border border-slate-850 p-8 rounded-2xl flex flex-col justify-between hover-gold-glow transition-all reveal">
+<div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl flex flex-col justify-between hover-gold-glow transition-all shadow-sm reveal">
 <div>
-<h3 class="font-slab text-xl font-bold text-white uppercase tracking-wider">Premium Plan</h3>
+<h3 class="font-slab text-xl font-bold text-slate-900 uppercase tracking-wider">Premium Plan</h3>
 <p class="text-slate-500 text-xs mt-1">Full-suite dynamic logic for hospitals, schools, and large enterprises.</p>
-<div class="my-6 py-4 border-y border-slate-850">
-<span class="text-lg font-bold text-gold-500 uppercase tracking-widest font-mono">Custom Proposal</span>
+<div class="my-6 py-4 border-y border-slate-200">
+<span class="text-lg font-bold text-gold-700 uppercase tracking-widest font-mono">Custom Proposal</span>
 <span class="text-slate-500 text-[10px] block mt-1 uppercase">Highest technology deployment</span>
 </div>
-<ul class="space-y-3 text-xs text-slate-300 font-mono">
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Over 20 dynamic pages</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Advanced frontend & backend</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Secure multi-role auth</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Custom admin dashboard</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Real-time check-in tracker</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Searchable database tables</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> PDF report output exports</li>
-<li><i class="fas fa-check text-gold-500 mr-2"></i> Maximum speed tuning</li>
+<ul class="space-y-3 text-xs text-slate-600 font-mono">
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Over 20 dynamic pages</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Advanced frontend & backend</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Secure multi-role auth</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Custom admin dashboard</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Real-time check-in tracker</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Searchable database tables</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> PDF report output exports</li>
+<li><i class="fas fa-check text-gold-600 mr-2"></i> Maximum speed tuning</li>
 </ul>
 </div>
 <div class="mt-8">
-<button onclick="requestQuotationModal('Premium Plan')" class="w-full bg-navy-900 hover:bg-gold-500 hover:text-navy-950 text-gold-500 font-bold py-3 rounded text-xs uppercase tracking-widest transition-all">Request Premium Plan</button>
+<button onclick="triggerContactAlert()" class="w-full bg-white hover:bg-gold-500 hover:text-white border border-slate-200 text-gold-700 font-bold py-3 rounded text-xs uppercase tracking-widest transition-all">Request Premium Plan</button>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- CM024 - Development Blueprint Roadmap -->
-<section class="py-20 bg-navy-950">
+<!-- CM039 - Development Blueprint Roadmap HTML -->
+<section class="py-20 bg-slate-50">
 <div class="max-w-7xl mx-auto px-4">
 <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-<span class="text-gold-500 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-navy-900 rounded border border-gold-500/20">Work Methodology</span>
-<h2 class="font-slab text-3xl sm:text-4xl font-bold text-white mt-3 tracking-tight">How We Develop Your Website</h2>
-<p class="text-slate-400 mt-3 text-sm">Every project is built after a deep study of your services, audience, and future requirements.</p>
+<span class="text-gold-700 font-bold tracking-wider uppercase text-xs px-3 py-1 bg-white rounded border border-slate-200">Work Methodology</span>
+<h2 class="font-slab text-3xl sm:text-4xl font-bold text-slate-900 mt-3 tracking-tight">How We Develop Your Website</h2>
+<p class="text-slate-600 mt-3 text-sm">Every project is built after a deep study of your services, audience, and future requirements.</p>
 </div>
 <div class="grid sm:grid-cols-2 lg:grid-cols-6 gap-4">
-<div class="bg-navy-900 border border-slate-850 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all reveal">
-<span class="h-8 w-8 rounded-full bg-gold-500 text-navy-950 flex items-center justify-center font-bold font-mono text-xs">01</span>
-<h3 class="font-slab font-bold text-white text-xs uppercase tracking-wider">Requirement Discussion</h3>
-<p class="text-[10px] text-slate-400 leading-relaxed">Understanding project ideas and functional requirements directly.</p>
+<div class="bg-white border border-slate-200 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all shadow-sm reveal">
+<span class="h-8 w-8 rounded-full bg-amber-100 text-gold-700 flex items-center justify-center font-bold font-mono text-xs">01</span>
+<h3 class="font-slab font-bold text-slate-900 text-xs uppercase tracking-wider">Requirement Discussion</h3>
+<p class="text-[10px] text-slate-500 leading-relaxed">Understanding project ideas and functional requirements directly.</p>
 </div>
-<div class="bg-navy-900 border border-slate-850 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all reveal">
-<span class="h-8 w-8 rounded-full bg-gold-500 text-navy-950 flex items-center justify-center font-bold font-mono text-xs">02</span>
-<h3 class="font-slab font-bold text-white text-xs uppercase tracking-wider">Organization Study</h3>
-<p class="text-[10px] text-slate-400 leading-relaxed">Mapping target demographics, roles, and administrative tasks.</p>
+<div class="bg-white border border-slate-200 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all shadow-sm reveal">
+<span class="h-8 w-8 rounded-full bg-amber-100 text-gold-700 flex items-center justify-center font-bold font-mono text-xs">02</span>
+<h3 class="font-slab font-bold text-slate-900 text-xs uppercase tracking-wider">Organization Study</h3>
+<p class="text-[10px] text-slate-500 leading-relaxed">Mapping target demographics, roles, and administrative tasks.</p>
 </div>
-<div class="bg-navy-900 border border-slate-850 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all reveal">
-<span class="h-8 w-8 rounded-full bg-gold-500 text-navy-950 flex items-center justify-center font-bold font-mono text-xs">03</span>
-<h3 class="font-slab font-bold text-white text-xs uppercase tracking-wider">Content & Planning</h3>
-<p class="text-[10px] text-slate-400 leading-relaxed">Designing layouts, custom database relations, and permission pathways.</p>
+<div class="bg-white border border-slate-200 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all shadow-sm reveal">
+<span class="h-8 w-8 rounded-full bg-amber-100 text-gold-700 flex items-center justify-center font-bold font-mono text-xs">03</span>
+<h3 class="font-slab font-bold text-slate-900 text-xs uppercase tracking-wider">Content & Planning</h3>
+<p class="text-[10px] text-slate-500 leading-relaxed">Designing layouts, custom database relations, and permission pathways.</p>
 </div>
-<div class="bg-navy-900 border border-slate-850 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all reveal">
-<span class="h-8 w-8 rounded-full bg-gold-500 text-navy-950 flex items-center justify-center font-bold font-mono text-xs">04</span>
-<h3 class="font-slab font-bold text-white text-xs uppercase tracking-wider">Design & Code</h3>
-<p class="text-[10px] text-slate-400 leading-relaxed">Programming interfaces and logical modules with clean code.</p>
+<div class="bg-white border border-slate-200 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all shadow-sm reveal">
+<span class="h-8 w-8 rounded-full bg-amber-100 text-gold-700 flex items-center justify-center font-bold font-mono text-xs">04</span>
+<h3 class="font-slab font-bold text-slate-900 text-xs uppercase tracking-wider">Design & Code</h3>
+<p class="text-[10px] text-slate-500 leading-relaxed">Programming interfaces and logical modules with clean code.</p>
 </div>
-<div class="bg-navy-900 border border-slate-850 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all reveal">
-<span class="h-8 w-8 rounded-full bg-gold-500 text-navy-950 flex items-center justify-center font-bold font-mono text-xs">05</span>
-<h3 class="font-slab font-bold text-white text-xs uppercase tracking-wider">Testing & Tuning</h3>
-<p class="text-[10px] text-slate-400 leading-relaxed">Verifying backend forms, security filters, and page speed standards.</p>
+<div class="bg-white border border-slate-200 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all shadow-sm reveal">
+<span class="h-8 w-8 rounded-full bg-amber-100 text-gold-700 flex items-center justify-center font-bold font-mono text-xs">05</span>
+<h3 class="font-slab font-bold text-slate-900 text-xs uppercase tracking-wider">Testing & Tuning</h3>
+<p class="text-[10px] text-slate-500 leading-relaxed">Verifying backend forms, security filters, and page speed standards.</p>
 </div>
-<div class="bg-navy-900 border border-slate-850 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all reveal">
-<span class="h-8 w-8 rounded-full bg-gold-500 text-navy-950 flex items-center justify-center font-bold font-mono text-xs">06</span>
-<h3 class="font-slab font-bold text-white text-xs uppercase tracking-wider">Final Delivery</h3>
-<p class="text-[10px] text-slate-400 leading-relaxed">Deploying code, setting up active security, and handoff to clients.</p>
+<div class="bg-white border border-slate-200 p-6 rounded-xl space-y-3 relative hover-gold-glow transition-all shadow-sm reveal">
+<span class="h-8 w-8 rounded-full bg-amber-100 text-gold-700 flex items-center justify-center font-bold font-mono text-xs">06</span>
+<h3 class="font-slab font-bold text-slate-900 text-xs uppercase tracking-wider">Final Delivery</h3>
+<p class="text-[10px] text-slate-500 leading-relaxed">Deploying code, setting up active security, and handoff to clients.</p>
 </div>
 </div>
 </div>
 </section>
 
-<!-- CM025 - Operational Strengths & Why Us -->
-<section class="py-20 bg-navy-900 border-t border-navy-850">
+<!-- CM040 - Operational Strengths & Why Us HTML -->
+<section class="py-20 bg-white border-t border-slate-200">
 <div class="max-w-7xl mx-auto px-4">
 <div class="grid lg:grid-cols-2 gap-12 items-center">
 <div class="space-y-6 reveal">
-<span class="text-gold-500 font-bold uppercase tracking-wider text-xs">Why Work With Us</span>
-<h2 class="font-slab text-3xl sm:text-4xl font-bold text-white tracking-tight">Professional Services & Robust Execution</h2>
-<p class="text-slate-400 text-sm leading-relaxed">
+<span class="text-gold-700 font-bold uppercase tracking-wider text-xs">Why Work With Us</span>
+<h2 class="font-slab text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">Professional Services & Robust Execution</h2>
+<p class="text-slate-600 text-sm leading-relaxed">
 Sri Veda Organization balances creative layout design with full stack technical expertise to provide highly secure solutions.
 </p>
-<div class="grid sm:grid-cols-2 gap-3.5 text-xs font-mono text-slate-300">
-<div class="flex items-center gap-2"><span class="text-gold-500"><i class="fas fa-check"></i></span> Custom website development</div>
-<div class="flex items-center gap-2"><span class="text-gold-500"><i class="fas fa-check"></i></span> Modern responsive pages</div>
-<div class="flex items-center gap-2"><span class="text-gold-500"><i class="fas fa-check"></i></span> High speed optimization</div>
-<div class="flex items-center gap-2"><span class="text-gold-500"><i class="fas fa-check"></i></span> Admin & role login portals</div>
-<div class="flex items-center gap-2"><span class="text-gold-500"><i class="fas fa-check"></i></span> Secure coding practices</div>
-<div class="flex items-center gap-2"><span class="text-gold-500"><i class="fas fa-check"></i></span> Clear project roadmaps</div>
-<div class="flex items-center gap-2"><span class="text-gold-500"><i class="fas fa-check"></i></span> Real-time attendance solutions</div>
-<div class="flex items-center gap-2"><span class="text-gold-500"><i class="fas fa-check"></i></span> Dynamic server management</div>
+<div class="grid sm:grid-cols-2 gap-3.5 text-xs font-mono text-slate-600">
+<div class="flex items-center gap-2"><span class="text-gold-600"><i class="fas fa-check"></i></span> Custom website development</div>
+<div class="flex items-center gap-2"><span class="text-gold-600"><i class="fas fa-check"></i></span> Modern responsive pages</div>
+<div class="flex items-center gap-2"><span class="text-gold-600"><i class="fas fa-check"></i></span> High speed optimization</div>
+<div class="flex items-center gap-2"><span class="text-gold-600"><i class="fas fa-check"></i></span> Admin & role login portals</div>
+<div class="flex items-center gap-2"><span class="text-gold-600"><i class="fas fa-check"></i></span> Secure coding practices</div>
+<div class="flex items-center gap-2"><span class="text-gold-600"><i class="fas fa-check"></i></span> Clear project roadmaps</div>
+<div class="flex items-center gap-2"><span class="text-gold-600"><i class="fas fa-check"></i></span> Real-time attendance solutions</div>
+<div class="flex items-center gap-2"><span class="text-gold-600"><i class="fas fa-check"></i></span> Dynamic server management</div>
 </div>
 </div>
-<div class="bg-navy-950 border border-slate-850 rounded-2xl p-8 relative overflow-hidden reveal">
-<div class="absolute -top-10 -right-10 w-36 h-36 bg-blue-500/5 rounded-full blur-2xl"></div>
-<h3 class="font-slab text-base font-bold text-gold-500 mb-6 uppercase tracking-wider">Performance Statistics</h3>
+<div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 relative overflow-hidden reveal shadow-sm">
+<div class="absolute -top-10 -right-10 w-36 h-36 bg-blue-100 rounded-full blur-2xl"></div>
+<h3 class="font-slab text-base font-bold text-gold-700 mb-6 uppercase tracking-wider">Performance Statistics</h3>
 <div class="grid grid-cols-2 gap-4 text-center font-mono">
-<div class="bg-navy-900 border border-slate-800 p-4 rounded">
-<span class="text-2xl font-bold text-white block">100%</span>
+<div class="bg-white border border-slate-200 p-4 rounded shadow-sm">
+<span class="text-2xl font-bold text-slate-900 block">100%</span>
 <span class="text-[9px] text-slate-500 uppercase mt-1 block">Client Approval</span>
 </div>
-<div class="bg-navy-900 border border-slate-800 p-4 rounded">
-<span class="text-2xl font-bold text-gold-500 block">4+</span>
+<div class="bg-white border border-slate-200 p-4 rounded shadow-sm">
+<span class="text-2xl font-bold text-gold-600 block">4+</span>
 <span class="text-[9px] text-slate-500 uppercase mt-1 block">Production Sites</span>
 </div>
-<div class="bg-navy-900 border border-slate-800 p-4 rounded">
-<span class="text-2xl font-bold text-sky-400 block">6+</span>
+<div class="bg-white border border-slate-200 p-4 rounded shadow-sm">
+<span class="text-2xl font-bold text-sky-500 block">6+</span>
 <span class="text-[9px] text-slate-500 uppercase mt-1 block">Security Checks</span>
 </div>
-<div class="bg-navy-900 border border-slate-800 p-4 rounded">
-<span class="text-2xl font-bold text-emerald-400 block">Zero</span>
+<div class="bg-white border border-slate-200 p-4 rounded shadow-sm">
+<span class="text-2xl font-bold text-emerald-500 block">Zero</span>
 <span class="text-[9px] text-slate-500 uppercase mt-1 block">Template Copies</span>
 </div>
 </div>
@@ -902,117 +900,98 @@ Sri Veda Organization balances creative layout design with full stack technical 
 </div>
 </section>
 
-<!-- CM026 - Service Notice Terms and Scope -->
-<section class="py-16 bg-navy-950 border-y border-navy-900">
+<!-- CM041 - Service Notice Terms and Scope HTML -->
+<section class="py-16 bg-slate-50 border-y border-slate-200">
 <div class="max-w-4xl mx-auto px-4">
-<div class="bg-navy-900 border border-gold-500/20 rounded-2xl p-6 sm:p-8 space-y-6 reveal">
-<div class="flex items-center gap-3 border-b border-slate-800 pb-4">
-<span class="text-gold-500 text-xl"><i class="fas fa-scale-balanced"></i></span>
-<h3 class="font-slab text-base font-bold text-white uppercase tracking-wider">Service Terms & Scope Notification</h3>
+<div class="bg-white border border-gold-600/30 rounded-2xl p-6 sm:p-8 space-y-6 shadow-sm reveal">
+<div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+<span class="text-gold-600 text-xl"><i class="fas fa-scale-balanced"></i></span>
+<h3 class="font-slab text-base font-bold text-slate-900 uppercase tracking-wider">Service Terms & Freelancing Scope</h3>
 </div>
-<p class="text-slate-400 text-xs leading-relaxed">
-Sri Veda Organization provides high-quality software architecture, frontend layouts, and customized backend programming. In order to keep our development fees transparent, the following external assets are not included in base plans:
+<p class="text-slate-600 text-sm leading-relaxed">
+We are currently operating as an independent freelancing agency, providing high-quality software architecture, frontend layouts, and customized backend programming. We proceed with any development strictly based on the specific requirements provided by the user.
 </p>
-<div class="grid sm:grid-cols-2 gap-4 text-xs font-mono text-slate-300">
-<div class="space-y-2">
-<div><i class="fas fa-minus text-gold-500 mr-2 text-[10px]"></i> Domain registration charges</div>
-<div><i class="fas fa-minus text-gold-500 mr-2 text-[10px]"></i> Hosting server charges</div>
-<div><i class="fas fa-minus text-gold-500 mr-2 text-[10px]"></i> Payment gateway fees</div>
-<div><i class="fas fa-minus text-gold-500 mr-2 text-[10px]"></i> Third-party APIs & mapping tools</div>
-<div><i class="fas fa-minus text-gold-500 mr-2 text-[10px]"></i> Premium visual design plugins</div>
-</div>
-<div class="space-y-2">
-<div><i class="fas fa-minus text-gold-500 mr-2 text-[10px]"></i> Automated bulk SMS gateways</div>
-<div><i class="fas fa-minus text-gold-500 mr-2 text-[10px]"></i> Email marketing portal integrations</div>
-<div><i class="fas fa-minus text-gold-500 mr-2 text-[10px]"></i> WhatsApp business account setup</div>
-<div><i class="fas fa-minus text-gold-500 mr-2 text-[10px]"></i> Future modification requirements</div>
-<div><i class="fas fa-minus text-gold-500 mr-2 text-[10px]"></i> Annual maintenance services</div>
-</div>
-</div>
-<p class="text-[10px] text-slate-500 leading-relaxed font-mono">
-* Domain names, hosting accounts, premium tools, or transaction gateways must be purchased by the client directly. The final project details and timelines will be confirmed through an approved proposal.
+<p class="text-slate-600 text-sm leading-relaxed">
+Before starting any project, we clearly explain our technical capabilities, the available modules, and the complete scope of our services. The client must fully understand the systems we deliver. We only initiate the development process after the client reviews and accepts the project terms and capabilities.
+</p>
+<p class="text-[10px] text-slate-400 leading-relaxed font-mono mt-4 pt-4 border-t border-slate-100">
+* Note: External assets such as domain registration charges, hosting server fees, premium plugins, and third-party API transaction gateways are not included in our standard freelancing development packages and must be procured by the client.
 </p>
 </div>
 </div>
 </section>
 
-<!-- CM027 - Direct Action Trigger Section -->
-<section class="py-20 bg-navy-950 relative overflow-hidden">
-<div class="absolute inset-0 bg-gold-500/5 blur-3xl pointer-events-none rounded-full"></div>
+<!-- CM042 - Direct Action Trigger Section HTML -->
+<section class="py-20 bg-slate-50 relative overflow-hidden">
+<div class="absolute inset-0 bg-amber-50/50 blur-3xl pointer-events-none rounded-full"></div>
 <div class="max-w-4xl mx-auto px-4 text-center space-y-6 relative z-10 reveal">
-<span class="text-gold-500 font-bold uppercase tracking-widest text-[10px] px-3 py-1 bg-navy-900 border border-gold-500/20 rounded">Deploy Services</span>
-<h2 class="font-slab text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">Ready to Build Your Digital Presence?</h2>
-<p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+<span class="text-gold-700 font-bold uppercase tracking-widest text-[10px] px-3 py-1 bg-white border border-slate-200 rounded">Deploy Services</span>
+<h2 class="font-slab text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 leading-tight">Ready to Build Your Digital Presence?</h2>
+<p class="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
 Tell us about your organization, services, team structure, and administrative tasks. Sri Veda Organization will prepare a tailored development plan for you.
 </p>
 <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 font-mono text-[11px]">
-<a href="#contact" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold px-6 py-3 rounded uppercase tracking-wider transition-all"><i class="fas fa-rocket mr-1.5"></i> Start Your Project</a>
-<a href="tel:9346119924" class="w-full sm:w-auto border border-slate-600 hover:border-gold-500 text-slate-300 hover:text-gold-500 font-bold px-6 py-3 rounded uppercase tracking-wider transition-all"><i class="fas fa-phone mr-1.5"></i> Call Now</a>
-<a href="mailto:contact.sriveda@gmail.com" class="w-full sm:w-auto border border-slate-600 hover:border-gold-500 text-slate-300 hover:text-gold-500 font-bold px-6 py-3 rounded uppercase tracking-wider transition-all"><i class="fas fa-envelope mr-1.5"></i> Send Email</a>
+<button onclick="triggerContactAlert()" class="w-full sm:w-auto bg-gold-500 hover:bg-gold-600 text-white font-bold px-6 py-3 rounded uppercase tracking-wider transition-all shadow-md"><i class="fas fa-rocket mr-1.5"></i> Start Your Project</button>
+<a href="" class="config-phone-link w-full sm:w-auto border border-slate-300 hover:border-gold-500 text-slate-600 hover:text-gold-700 bg-white font-bold px-6 py-3 rounded uppercase tracking-wider transition-all"><i class="fas fa-phone mr-1.5"></i> Call Now</a>
+<a href="" class="config-email-link w-full sm:w-auto border border-slate-300 hover:border-gold-500 text-slate-600 hover:text-gold-700 bg-white font-bold px-6 py-3 rounded uppercase tracking-wider transition-all"><i class="fas fa-envelope mr-1.5"></i> Send Email</a>
 </div>
 </div>
 </section>
 
-<!-- CM028 - Complex Dynamic Form & Contact Section -->
-<section id="contact" class="py-20 bg-navy-900 border-t border-navy-850">
+<!-- CM043 - Complex Dynamic Form & Contact Section HTML -->
+<section id="contact" class="py-20 bg-white border-t border-slate-200">
 <div class="max-w-7xl mx-auto px-4">
 <div class="grid lg:grid-cols-12 gap-12 items-start">
 <div class="lg:col-span-5 space-y-6 reveal">
 <div>
-<span class="text-gold-500 font-bold uppercase tracking-wider text-xs">Contact Us</span>
-<h2 class="font-slab text-3xl font-bold text-white mt-1 tracking-tight">Contact Sri Veda Organization</h2>
-<p class="text-slate-400 text-xs">Reach out for consultations, planning, or proposal creation.</p>
+<span class="text-gold-700 font-bold uppercase tracking-wider text-xs">Contact Us</span>
+<h2 class="font-slab text-3xl font-bold text-slate-900 mt-1 tracking-tight">Contact Sri Veda Organization</h2>
+<p class="text-slate-500 text-xs">Reach out for consultations, planning, or proposal creation.</p>
 </div>
 <div class="space-y-4">
-<div class="bg-navy-950 border border-slate-850 p-5 rounded-xl space-y-2">
-<h4 class="font-slab font-bold text-white text-xs uppercase tracking-wider"><i class="fas fa-map-marked-alt text-gold-500 mr-2"></i> Office Address</h4>
-<p class="text-xs text-slate-400 leading-relaxed font-mono">
-Sri Veda Organization,<br>Chagalamarri, Nandyal District,<br>Andhra Pradesh - 518553
-</p>
+<div class="bg-slate-50 border border-slate-200 p-5 rounded-xl space-y-2 shadow-sm">
+<h4 class="font-slab font-bold text-slate-900 text-xs uppercase tracking-wider"><i class="fas fa-map-marked-alt text-gold-600 mr-2"></i> Office Address</h4>
+<p class="text-xs text-slate-600 leading-relaxed font-mono">Sri Veda Organization,<br><span class="config-address-text"></span></p>
 </div>
-<a href="tel:9346119924" class="block bg-navy-950 border border-slate-850 p-5 rounded-xl hover:border-gold-500 transition-all group">
-<h4 class="font-slab font-bold text-white text-xs uppercase tracking-wider group-hover:text-gold-500 transition-colors"><i class="fas fa-phone-alt text-gold-500 mr-2"></i> Call Directly</h4>
-<p class="text-base font-bold text-slate-200 mt-1 font-mono">9346119924</p>
+<a href="" class="config-phone-link block bg-slate-50 border border-slate-200 p-5 rounded-xl hover:border-gold-500 transition-all group shadow-sm">
+<h4 class="font-slab font-bold text-slate-900 text-xs uppercase tracking-wider group-hover:text-gold-700 transition-colors"><i class="fas fa-phone-alt text-gold-600 mr-2"></i> Call Directly</h4>
+<p class="text-base font-bold text-slate-700 mt-1 font-mono config-phone-text"></p>
 <span class="text-[9px] text-slate-500 block uppercase mt-1">Tap to dial office terminal</span>
 </a>
-<a href="mailto:contact.sriveda@gmail.com" class="block bg-navy-950 border border-slate-850 p-5 rounded-xl hover:border-gold-500 transition-all group">
-<h4 class="font-slab font-bold text-white text-xs uppercase tracking-wider group-hover:text-gold-500 transition-colors"><i class="fas fa-envelope text-gold-500 mr-2"></i> Send Email</h4>
-<p class="text-sm font-bold text-slate-200 mt-1 font-mono">contact.sriveda@gmail.com</p>
+<a href="" class="config-email-link block bg-slate-50 border border-slate-200 p-5 rounded-xl hover:border-gold-500 transition-all group shadow-sm">
+<h4 class="font-slab font-bold text-slate-900 text-xs uppercase tracking-wider group-hover:text-gold-700 transition-colors"><i class="fas fa-envelope text-gold-600 mr-2"></i> Send Email</h4>
+<p class="text-sm font-bold text-slate-700 mt-1 font-mono config-email-text"></p>
 <span class="text-[9px] text-slate-500 block uppercase mt-1">Typical reply within 12 hours</span>
 </a>
 </div>
 </div>
-<div class="lg:col-span-7 bg-navy-950 border border-slate-850 p-6 sm:p-8 rounded-2xl relative reveal">
-<h3 class="font-slab text-lg font-bold text-white mb-6 uppercase tracking-wider border-b border-slate-850 pb-2">Submit Your Project Enquiry</h3>
-<form id="enquiry-form" onsubmit="validateAndSubmitEnquiry(event)" class="space-y-4 text-xs font-mono">
+<div class="lg:col-span-7 bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl relative shadow-sm reveal">
+<h3 class="font-slab text-lg font-bold text-slate-900 mb-6 uppercase tracking-wider border-b border-slate-200 pb-2">Submit Your Project Enquiry</h3>
+<form id="enquiry-form" class="space-y-4 text-xs font-mono">
 <div class="grid sm:grid-cols-2 gap-4">
 <div>
-<label class="block font-bold text-slate-400 uppercase mb-1">Full Name: <span class="text-rose-500">*</span></label>
-<input type="text" id="form-name" placeholder="E.g. Rajesh Kumar" class="w-full bg-navy-900 border border-slate-800 rounded px-3.5 py-2 text-white focus:outline-none focus:border-gold-500">
-<span id="error-name" class="text-[9px] text-rose-500 hidden mt-1 block">Full Name is required</span>
+<label class="block font-bold text-slate-600 uppercase mb-1">Full Name: <span class="text-rose-500">*</span></label>
+<input type="text" id="form-name" placeholder="E.g. Rajesh Kumar" class="w-full bg-white border border-slate-300 rounded px-3.5 py-2 text-slate-900 focus:outline-none focus:border-gold-600">
 </div>
 <div>
-<label class="block font-bold text-slate-400 uppercase mb-1">Organization Name: <span class="text-rose-500">*</span></label>
-<input type="text" id="form-org" placeholder="E.g. Temple Trust" class="w-full bg-navy-900 border border-slate-800 rounded px-3.5 py-2 text-white focus:outline-none focus:border-gold-500">
-<span id="error-org" class="text-[9px] text-rose-500 hidden mt-1 block">Organization is required</span>
-</div>
-</div>
-<div class="grid sm:grid-cols-2 gap-4">
-<div>
-<label class="block font-bold text-slate-400 uppercase mb-1">Phone Number: <span class="text-rose-500">*</span></label>
-<input type="text" id="form-phone" placeholder="10-digit mobile" class="w-full bg-navy-900 border border-slate-800 rounded px-3.5 py-2 text-white focus:outline-none focus:border-gold-500">
-<span id="error-phone" class="text-[9px] text-rose-500 hidden mt-1 block">Valid 10-digit mobile is required</span>
-</div>
-<div>
-<label class="block font-bold text-slate-400 uppercase mb-1">Email Address: <span class="text-rose-500">*</span></label>
-<input type="email" id="form-email" placeholder="E.g. contact@domain.com" class="w-full bg-navy-900 border border-slate-800 rounded px-3.5 py-2 text-white focus:outline-none focus:border-gold-500">
-<span id="error-email" class="text-[9px] text-rose-500 hidden mt-1 block">Valid email is required</span>
+<label class="block font-bold text-slate-600 uppercase mb-1">Organization Name: <span class="text-rose-500">*</span></label>
+<input type="text" id="form-org" placeholder="E.g. Temple Trust" class="w-full bg-white border border-slate-300 rounded px-3.5 py-2 text-slate-900 focus:outline-none focus:border-gold-600">
 </div>
 </div>
 <div class="grid sm:grid-cols-2 gap-4">
 <div>
-<label class="block font-bold text-slate-400 uppercase mb-1">Type of Organization:</label>
-<select id="form-type" class="w-full bg-navy-900 border border-slate-800 rounded px-3.5 py-2 text-slate-300 focus:outline-none focus:border-gold-500">
+<label class="block font-bold text-slate-600 uppercase mb-1">Phone Number: <span class="text-rose-500">*</span></label>
+<input type="text" id="form-phone" placeholder="10-digit mobile" class="w-full bg-white border border-slate-300 rounded px-3.5 py-2 text-slate-900 focus:outline-none focus:border-gold-600">
+</div>
+<div>
+<label class="block font-bold text-slate-600 uppercase mb-1">Email Address: <span class="text-rose-500">*</span></label>
+<input type="email" id="form-email" placeholder="E.g. contact@domain.com" class="w-full bg-white border border-slate-300 rounded px-3.5 py-2 text-slate-900 focus:outline-none focus:border-gold-600">
+</div>
+</div>
+<div class="grid sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-bold text-slate-600 uppercase mb-1">Type of Organization:</label>
+<select id="form-type" class="w-full bg-white border border-slate-300 rounded px-3.5 py-2 text-slate-700 focus:outline-none focus:border-gold-600">
 <option value="Hospital">Hospital / Clinic</option>
 <option value="Temple">Temple Trust</option>
 <option value="School">School / Academics</option>
@@ -1021,8 +1000,8 @@ Sri Veda Organization,<br>Chagalamarri, Nandyal District,<br>Andhra Pradesh - 51
 </select>
 </div>
 <div>
-<label class="block font-bold text-slate-400 uppercase mb-1">Required Plan Option:</label>
-<select id="form-plan" class="w-full bg-navy-900 border border-slate-800 rounded px-3.5 py-2 text-slate-300 focus:outline-none focus:border-gold-500">
+<label class="block font-bold text-slate-600 uppercase mb-1">Required Plan Option:</label>
+<select id="form-plan" class="w-full bg-white border border-slate-300 rounded px-3.5 py-2 text-slate-700 focus:outline-none focus:border-gold-600">
 <option value="Basic Plan">Basic Plan (Up to 5 Pages)</option>
 <option value="Standard Plan">Standard Plan (More than 10 Pages)</option>
 <option value="Premium Plan">Premium Plan (Complete Systems)</option>
@@ -1030,169 +1009,114 @@ Sri Veda Organization,<br>Chagalamarri, Nandyal District,<br>Andhra Pradesh - 51
 </div>
 </div>
 <div>
-<label class="block font-bold text-slate-400 uppercase mb-1">Project Scope & Requirements: <span class="text-rose-500">*</span></label>
-<textarea id="form-requirements" rows="4" placeholder="Briefly describe what pages, forms, or login rules you need..." class="w-full bg-navy-900 border border-slate-800 rounded px-3.5 py-2 text-white focus:outline-none focus:border-gold-500"></textarea>
-<span id="error-requirements" class="text-[9px] text-rose-500 hidden mt-1 block">Project details are required</span>
+<label class="block font-bold text-slate-600 uppercase mb-1">Project Scope & Requirements: <span class="text-rose-500">*</span></label>
+<textarea id="form-requirements" rows="4" placeholder="Briefly describe what pages, forms, or login rules you need..." class="w-full bg-white border border-slate-300 rounded px-3.5 py-2 text-slate-900 focus:outline-none focus:border-gold-600"></textarea>
 </div>
-<button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold py-3.5 rounded text-xs uppercase tracking-widest transition-all shadow-lg"><i class="fas fa-paper-plane mr-1.5"></i> Submit Enquiry</button>
+<button type="button" onclick="triggerContactAlert()" class="w-full bg-gold-500 hover:bg-gold-600 text-white font-bold py-3.5 rounded text-xs uppercase tracking-widest transition-all shadow-md"><i class="fas fa-paper-plane mr-1.5"></i> Submit Enquiry</button>
 </form>
-<div id="enquiry-success-message" class="hidden absolute inset-0 bg-navy-950/95 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center p-8 text-center">
-<div class="h-14 w-14 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center text-2xl mb-4 animate-bounce"><i class="fas fa-check-double"></i></div>
-<h4 class="font-slab text-base font-bold text-white uppercase tracking-wider">Enquiry Logged Securely!</h4>
-<p class="text-slate-400 text-xs mt-2 max-w-md leading-relaxed font-mono">
-Thank you, <strong id="success-client-name" class="text-white"></strong>. Sri Veda has recorded your enquiry. We will analyze your organization requirements and contact you at <span id="success-client-phone" class="text-gold-500 font-bold"></span> soon.
-</p>
-<button onclick="resetEnquiryFormState()" class="mt-6 bg-navy-900 hover:bg-navy-800 text-slate-300 px-5 py-2.5 rounded text-xs uppercase tracking-wider font-bold font-mono">Submit Another Enquiry</button>
-</div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- CM029 - Operational Footer Grid -->
-<footer class="bg-navy-950 text-slate-400 pt-16 pb-8 border-t border-navy-900 text-xs">
-<div class="max-w-7xl mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-navy-900">
+<!-- CM044 - Operational Footer Grid HTML -->
+<footer class="bg-slate-50 text-slate-500 pt-16 pb-8 border-t border-slate-200 text-xs">
+<div class="max-w-7xl mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-slate-200">
 <div class="space-y-4">
 <a href="#home" class="flex items-center space-x-3 group">
-<img src="https://sri-veda-org.github.io/SVLP/SV_ORG_LOGO.png" alt="Sri Veda Logo" class="h-10 w-10 object-contain">
+<img src="" alt="Sri Veda Logo" class="config-logo h-10 w-10 object-contain rounded-full">
 <div class="flex flex-col">
-<span class="font-slab text-base font-bold text-white tracking-wider leading-tight">SRI VEDA</span>
-<span class="text-[9px] font-bold text-gold-500 tracking-widest uppercase">ORGANIZATION</span>
+<span class="font-slab text-base font-bold text-slate-900 tracking-wider leading-tight">SRI VEDA</span>
+<span class="text-[9px] font-bold text-gold-600 tracking-widest uppercase">ORGANIZATION</span>
 </div>
 </a>
 <p class="text-[11px] text-slate-500 leading-relaxed font-mono">
 Sri Veda Organization provides custom software programming, database development, and backend application development.
 </p>
 <div class="flex items-center space-x-3">
-<a href="tel:9346119924" class="h-8 w-8 rounded bg-navy-900 hover:bg-gold-500 hover:text-navy-950 text-slate-400 flex items-center justify-center transition-colors"><i class="fas fa-phone"></i></a>
-<a href="mailto:contact.sriveda@gmail.com" class="h-8 w-8 rounded bg-navy-900 hover:bg-gold-500 hover:text-navy-950 text-slate-400 flex items-center justify-center transition-colors"><i class="fas fa-envelope"></i></a>
+<a href="" class="config-phone-link h-8 w-8 rounded bg-white border border-slate-200 hover:bg-gold-500 hover:text-white hover:border-gold-500 text-slate-500 flex items-center justify-center transition-all"><i class="fas fa-phone"></i></a>
+<a href="" class="config-email-link h-8 w-8 rounded bg-white border border-slate-200 hover:bg-gold-500 hover:text-white hover:border-gold-500 text-slate-500 flex items-center justify-center transition-all"><i class="fas fa-envelope"></i></a>
 </div>
 </div>
 <div class="space-y-3 font-mono text-[11px]">
-<h4 class="font-slab text-white font-bold uppercase tracking-wider border-b border-navy-900 pb-2">Quick Links</h4>
-<a href="#home" class="block hover:text-gold-500 transition-colors">Home Profile</a>
-<a href="#services" class="block hover:text-gold-500 transition-colors">Capabilities</a>
-<a href="#projects" class="block hover:text-gold-500 transition-colors">Portals Showcase</a>
-<a href="#plans" class="block hover:text-gold-500 transition-colors">Price Plans</a>
-<a href="#contact" class="block hover:text-gold-500 transition-colors">Office Terminal</a>
+<h4 class="font-slab text-slate-900 font-bold uppercase tracking-wider border-b border-slate-200 pb-2">Quick Links</h4>
+<a href="#home" class="block hover:text-gold-700 transition-colors">Home Profile</a>
+<a href="#services" class="block hover:text-gold-700 transition-colors">Capabilities</a>
+<a href="#projects" class="block hover:text-gold-700 transition-colors">Portals Showcase</a>
+<a href="#plans" class="block hover:text-gold-700 transition-colors">Price Plans</a>
+<a href="#contact" class="block hover:text-gold-700 transition-colors">Office Terminal</a>
 </div>
 <div class="space-y-3 font-mono text-[11px]">
-<h4 class="font-slab text-white font-bold uppercase tracking-wider border-b border-navy-900 pb-2">Role Portals</h4>
-<button onclick="openSimulationPortal('Admin')" class="block text-left hover:text-gold-500 transition-colors uppercase"><i class="fas fa-shield-alt mr-1.5"></i> Admin</button>
-<button onclick="openSimulationPortal('Staff')" class="block text-left hover:text-gold-500 transition-colors uppercase"><i class="fas fa-id-badge mr-1.5"></i> Staff</button>
-<button onclick="openSimulationPortal('Doctor')" class="block text-left hover:text-gold-500 transition-colors uppercase"><i class="fas fa-user-md mr-1.5"></i> Doctor</button>
-<button onclick="openSimulationPortal('Teacher')" class="block text-left hover:text-gold-500 transition-colors uppercase"><i class="fas fa-chalkboard-teacher mr-1.5"></i> Teacher</button>
+<h4 class="font-slab text-slate-900 font-bold uppercase tracking-wider border-b border-slate-200 pb-2">Role Portals</h4>
+<button onclick="openSimulationPortal('Admin')" class="block text-left hover:text-gold-700 transition-colors uppercase"><i class="fas fa-shield-alt mr-1.5"></i> Admin</button>
+<button onclick="openSimulationPortal('Staff')" class="block text-left hover:text-gold-700 transition-colors uppercase"><i class="fas fa-id-badge mr-1.5"></i> Staff</button>
+<button onclick="openSimulationPortal('Doctor')" class="block text-left hover:text-gold-700 transition-colors uppercase"><i class="fas fa-user-md mr-1.5"></i> Doctor</button>
+<button onclick="openSimulationPortal('Teacher')" class="block text-left hover:text-gold-700 transition-colors uppercase"><i class="fas fa-chalkboard-teacher mr-1.5"></i> Teacher</button>
 </div>
 <div class="space-y-3 font-mono text-[11px]">
-<h4 class="font-slab text-white font-bold uppercase tracking-wider border-b border-navy-900 pb-2">Service Hours</h4>
+<h4 class="font-slab text-slate-900 font-bold uppercase tracking-wider border-b border-slate-200 pb-2">Service Hours</h4>
 <p class="text-[11px] text-slate-500 leading-relaxed">
 Our development and architecture teams operate during standard business hours:
 </p>
-<div class="space-y-1 text-slate-400 text-[10px]">
+<div class="space-y-1 text-slate-500 text-[10px]">
 <p class="flex justify-between"><span>Monday - Friday</span> <span>09:00 - 18:00</span></p>
 <p class="flex justify-between"><span>Saturdays</span> <span>09:00 - 14:00</span></p>
-<p class="flex justify-between"><span>Sundays</span> <span class="text-slate-600 uppercase">Maintenance</span></p>
+<p class="flex justify-between"><span>Sundays</span> <span class="text-slate-400 uppercase">Maintenance</span></p>
 </div>
 </div>
 </div>
-<div class="max-w-7xl mx-auto px-4 pt-8 text-center text-slate-600 text-[10px] space-y-1 font-mono">
+<div class="max-w-7xl mx-auto px-4 pt-8 text-center text-slate-500 text-[10px] space-y-1 font-mono">
 <p>© 2026 Sri Veda Organization. All Rights Reserved.</p>
-<p>Designed and Developed by <strong class="text-gold-500">Sri Veda Organization</strong></p>
+<p>Designed and Developed by <strong class="text-gold-700">Sri Veda Organization</strong></p>
 </div>
 </footer>
-<button id="back-to-top-btn" class="fixed bottom-6 right-6 z-40 bg-gold-500 hover:bg-gold-600 text-navy-950 h-10 w-10 rounded shadow-lg flex items-center justify-center transition-all opacity-0 translate-y-10 pointer-events-none"><i class="fas fa-chevron-up"></i></button>
+<button id="back-to-top-btn" class="fixed bottom-6 right-6 z-40 bg-gold-500 hover:bg-gold-600 text-white h-10 w-10 rounded shadow-lg flex items-center justify-center transition-all opacity-0 translate-y-10 pointer-events-none"><i class="fas fa-chevron-up"></i></button>
 
-<!-- CM030 - Interactive Popups & Notification Modals -->
-<div id="quotation-modal" class="modal-overlay fixed inset-0 z-50 bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none">
-<div class="bg-navy-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 relative shadow-2xl overflow-y-auto max-h-[90vh]">
-<button onclick="closeQuotationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fas fa-times text-lg"></i></button>
-<div class="text-center space-y-1 border-b border-slate-850 pb-3 mb-4">
-<h3 class="font-slab text-base font-bold text-white uppercase tracking-wider">Proposal Planner</h3>
-<p class="text-[10px] text-slate-400 font-mono">Configure details before dispatching proposal requests.</p>
+<!-- CM045 - Interactive Popups & Notification Modals HTML -->
+<div id="contact-action-modal" class="modal-overlay fixed inset-0 z-[60] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none">
+<div class="bg-white border border-slate-200 rounded-2xl max-w-sm w-full p-6 text-center space-y-5 shadow-2xl">
+<div class="h-14 w-14 bg-amber-100 text-gold-600 rounded-full flex items-center justify-center text-2xl mx-auto"><i class="fas fa-headset"></i></div>
+<h3 class="font-slab text-base font-bold text-slate-900 uppercase tracking-wider">Contact Us Directly</h3>
+<p class="text-slate-600 text-xs leading-relaxed font-mono">Currently, we are taking only direct calls and accepting emails. Please send an email or contact us via phone to discuss your project requirements.</p>
+<div class="flex flex-col gap-3 pt-2">
+<a href="" class="config-phone-link w-full bg-gold-500 hover:bg-gold-600 text-white font-bold py-2.5 rounded text-xs uppercase tracking-wider transition-all shadow-md"><i class="fas fa-phone mr-1.5"></i> Call Office</a>
+<a href="" class="config-email-link w-full bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 font-bold py-2.5 rounded text-xs uppercase tracking-wider transition-all"><i class="fas fa-envelope mr-1.5"></i> Send Email</a>
 </div>
-<form id="modal-quotation-form" onsubmit="submitQuotationPlanner(event)" class="space-y-3 font-mono text-xs text-left">
-<div>
-<label class="block font-bold text-slate-500 uppercase mb-1">Selected Plan Tier:</label>
-<input type="text" id="modal-plan-name" class="w-full bg-navy-950 border border-slate-800 rounded px-3 py-2 text-gold-500 font-bold" readonly>
-</div>
-<div class="grid sm:grid-cols-2 gap-3">
-<div>
-<label class="block font-bold text-slate-500 uppercase mb-1">Full Name: <span class="text-rose-500">*</span></label>
-<input type="text" id="modal-client-name" class="w-full bg-navy-950 border border-slate-800 rounded px-3 py-2 text-white" required>
-</div>
-<div>
-<label class="block font-bold text-slate-500 uppercase mb-1">Contact Number: <span class="text-rose-500">*</span></label>
-<input type="text" id="modal-client-phone" class="w-full bg-navy-950 border border-slate-800 rounded px-3 py-2 text-white" required>
+<button onclick="closeContactAlert()" class="mt-2 text-[10px] text-slate-400 hover:text-slate-600 uppercase font-bold tracking-wider font-mono">Close Window</button>
 </div>
 </div>
-<div>
-<label class="block font-bold text-slate-500 uppercase mb-1">System Customizations Required:</label>
-<div class="grid grid-cols-2 gap-2 text-[10px] text-slate-300 font-bold">
-<label class="flex items-center gap-1.5"><input type="checkbox" id="addon-login" class="accent-gold-500"> Separate Logins</label>
-<label class="flex items-center gap-1.5"><input type="checkbox" id="addon-attendance" class="accent-gold-500"> Punch Records</label>
-<label class="flex items-center gap-1.5"><input type="checkbox" id="addon-admin" class="accent-gold-500"> Admin Panel</label>
-<label class="flex items-center gap-1.5"><input type="checkbox" id="addon-seo" class="accent-gold-500"> Deep SEO Tunings</label>
-</div>
-</div>
-<div>
-<label class="block font-bold text-slate-500 uppercase mb-1">Detailed Workflow Demands:</label>
-<textarea id="modal-client-scope" rows="3" placeholder="Enter details about your organization setup..." class="w-full bg-navy-950 border border-slate-800 rounded px-3 py-2 text-white" required></textarea>
-</div>
-<button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold py-2.5 rounded text-xs uppercase tracking-widest transition-all">Request Proposal</button>
-</form>
-</div>
-</div>
-<div id="alert-modal" class="modal-overlay fixed inset-0 z-[60] bg-navy-950/80 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none">
-<div class="bg-navy-900 border border-slate-850 rounded-2xl max-w-xs w-full p-6 text-center space-y-4 shadow-2xl">
+<div id="alert-modal" class="modal-overlay fixed inset-0 z-[60] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 pointer-events-none">
+<div class="bg-white border border-slate-200 rounded-2xl max-w-xs w-full p-6 text-center space-y-4 shadow-2xl">
 <div id="alert-icon-wrapper" class="h-10 w-10 rounded-full flex items-center justify-center text-lg mx-auto">
 <i class="fas fa-info" id="alert-icon"></i>
 </div>
-<h3 class="font-slab text-sm font-bold text-white uppercase tracking-wider" id="alert-title">System Status Message</h3>
-<p class="text-slate-400 text-xs leading-relaxed font-mono" id="alert-body">Message goes here...</p>
-<button onclick="closeAlertModal()" class="w-full bg-navy-800 hover:bg-navy-700 text-slate-200 font-bold py-2 rounded text-xs uppercase tracking-wider font-mono">Close</button>
+<h3 class="font-slab text-sm font-bold text-slate-900 uppercase tracking-wider" id="alert-title">System Status Message</h3>
+<p class="text-slate-600 text-xs leading-relaxed font-mono" id="alert-body">Message goes here...</p>
+<button onclick="closeAlertModal()" class="w-full bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 font-bold py-2 rounded text-xs uppercase tracking-wider font-mono">Close</button>
 </div>
 </div>
 
 <script>
-/* CM031 - State Variables and Onload Setup */
-let punchesCount = 0; let pwaDeferredPrompt = null;
-window.onload = function() { document.getElementById('loader').style.opacity = '0'; setTimeout(() => { document.getElementById('loader').style.visibility = 'hidden'; }, 500); initScrollReveal(); initTerminalClock(); registerSystemWorker(); }
+/* CM046 - State Variables and Onload Setup JS */
+let punchesCount = 0; let pwaDeferredPrompt = null; window.onload = function() { document.getElementById('loader').style.opacity = '0'; setTimeout(() => { document.getElementById('loader').style.visibility = 'hidden'; }, 500); initScrollReveal(); initTerminalClock(); registerSystemWorker(); applyConfigLinks(); }
 
-/* CM032 - Sticky Scrolling and Menu Controls */
-window.addEventListener('scroll', () => { if (window.scrollY > 100) { document.getElementById('main-header').classList.add('py-1', 'shadow-2xl'); document.getElementById('back-to-top-btn').classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none'); } else { document.getElementById('main-header').classList.remove('py-1', 'shadow-2xl'); document.getElementById('back-to-top-btn').classList.add('opacity-0', 'translate-y-10', 'pointer-events-none'); } });
-document.getElementById('back-to-top-btn').addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); const icon = document.getElementById('menu-icon'); if (document.getElementById('mobile-menu').classList.contains('hidden')) { icon.className = 'fas fa-bars text-2xl'; } else { icon.className = 'fas fa-times text-2xl'; } });
-document.querySelectorAll('.mobile-nav-link').forEach(link => { link.addEventListener('click', () => { document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('menu-icon').className = 'fas fa-bars text-2xl'; }); });
-function initScrollReveal() { const reveals = document.querySelectorAll('.reveal'); const observer = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 }); reveals.forEach(reveal => { observer.observe(reveal); }); }
-function initTerminalClock() { setInterval(() => { const now = new Date(); document.getElementById('live-time-stamp').innerText = now.toTimeString().split(' ')[0] + ' GMT+5:30'; }, 1000); }
+/* CM047 - Sticky Scrolling and Menu Controls JS */
+window.addEventListener('scroll', () => { if (window.scrollY > 100) { document.getElementById('main-header').classList.add('py-1', 'shadow-md'); document.getElementById('back-to-top-btn').classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none'); } else { document.getElementById('main-header').classList.remove('py-1', 'shadow-md'); document.getElementById('back-to-top-btn').classList.add('opacity-0', 'translate-y-10', 'pointer-events-none'); } }); document.getElementById('back-to-top-btn').addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); }); document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); const icon = document.getElementById('menu-icon'); if (document.getElementById('mobile-menu').classList.contains('hidden')) { icon.className = 'fas fa-bars text-2xl'; } else { icon.className = 'fas fa-times text-2xl'; } }); document.querySelectorAll('.mobile-nav-link').forEach(link => { link.addEventListener('click', () => { document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('menu-icon').className = 'fas fa-bars text-2xl'; }); }); function initScrollReveal() { const reveals = document.querySelectorAll('.reveal'); const observer = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 }); reveals.forEach(reveal => { observer.observe(reveal); }); } function initTerminalClock() { setInterval(() => { const now = new Date(); document.getElementById('live-time-stamp').innerText = now.toTimeString().split(' ')[0] + ' GMT+5:30'; }, 1000); }
 
-/* CM033 - Modal and Alert Functions */
-function triggerCustomAlert(title, message, type = 'info') { const m = document.getElementById('alert-modal'); const w = document.getElementById('alert-icon-wrapper'); const i = document.getElementById('alert-icon'); document.getElementById('alert-title').innerText = title; document.getElementById('alert-body').innerText = message; w.className = 'h-10 w-10 rounded-full flex items-center justify-center text-lg mx-auto'; if (type === 'success') { w.classList.add('bg-emerald-500/10', 'text-emerald-400'); i.className = 'fas fa-check'; } else if (type === 'error') { w.classList.add('bg-rose-500/10', 'text-rose-400'); i.className = 'fas fa-times'; } else { w.classList.add('bg-blue-500/10', 'text-blue-400'); i.className = 'fas fa-info'; } m.classList.remove('opacity-0', 'pointer-events-none'); }
-function closeAlertModal() { document.getElementById('alert-modal').classList.add('opacity-0', 'pointer-events-none'); }
+/* CM048 - Modal and Alert Functions JS */
+function applyConfigLinks() { document.querySelectorAll('.config-logo').forEach(el => el.src = CONFIG.logo); document.querySelectorAll('.config-favicon').forEach(el => el.href = CONFIG.favicon); document.querySelectorAll('.config-phone-link').forEach(el => el.href = `tel:${CONFIG.phone}`); document.querySelectorAll('.config-phone-text').forEach(el => el.innerText = CONFIG.phone); document.querySelectorAll('.config-email-link').forEach(el => el.href = `mailto:${CONFIG.email}`); document.querySelectorAll('.config-email-text').forEach(el => el.innerText = CONFIG.email); document.querySelectorAll('.config-address-text').forEach(el => el.innerText = CONFIG.address); const s = document.getElementById('link-svtc'); if(s) s.href = CONFIG.svtcUrl; const d = document.getElementById('link-drvsr'); if(d) d.href = CONFIG.drvsrUrl; const sa = document.getElementById('link-sanjeeva'); if(sa) sa.href = CONFIG.sanjeevaUrl; const a = document.getElementById('link-ahobilam'); if(a) a.href = CONFIG.ahobilamUrl; } function triggerCustomAlert(title, message, type = 'info') { const m = document.getElementById('alert-modal'); const w = document.getElementById('alert-icon-wrapper'); const i = document.getElementById('alert-icon'); document.getElementById('alert-title').innerText = title; document.getElementById('alert-body').innerText = message; w.className = 'h-10 w-10 rounded-full flex items-center justify-center text-lg mx-auto'; if (type === 'success') { w.classList.add('bg-emerald-100', 'text-emerald-600'); i.className = 'fas fa-check'; } else if (type === 'error') { w.classList.add('bg-rose-100', 'text-rose-600'); i.className = 'fas fa-times'; } else { w.classList.add('bg-blue-100', 'text-blue-600'); i.className = 'fas fa-info'; } m.classList.remove('opacity-0', 'pointer-events-none'); } function closeAlertModal() { document.getElementById('alert-modal').classList.add('opacity-0', 'pointer-events-none'); }
 
-/* CM034 - Sandbox Role Selector and Output Generation */
-function setSimulatedRole(role) { document.querySelectorAll('.sim-role-btn').forEach(b => { b.className = "sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-navy-900 text-slate-300 hover:bg-slate-800 flex items-center gap-2"; }); document.getElementById(`sim-role-btn-${role}`).className = "sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-gold-500 text-navy-950 flex items-center gap-2"; const shell = document.getElementById('simulated-dashboard-content'); let html = ''; switch(role) { case 'Admin': html = `<div class="p-4 bg-navy-900 border border-slate-800 rounded"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-gold-500 uppercase tracking-wider"><i class="fas fa-shield-alt"></i> Admin Control Panel</h5><span class="text-[9px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-mono uppercase font-bold">System Root</span></div><p class="text-xs text-slate-400 leading-relaxed">Absolute control with server-side auth: download databases, manage roles, view logs, and approve custom integrations.</p><div class="grid grid-cols-3 gap-3 mt-4 text-[10px]"><div class="bg-navy-950 p-2.5 rounded border border-slate-850 text-center"><span class="text-slate-500 block uppercase">Log Count</span><span class="text-white font-bold block">1,842</span></div><div class="bg-navy-950 p-2.5 rounded border border-slate-850 text-center"><span class="text-slate-500 block uppercase">Free-Tier Server</span><span class="text-emerald-400 font-bold block">ONLINE</span></div><div class="bg-navy-950 p-2.5 rounded border border-slate-850 text-center"><span class="text-slate-500 block uppercase">Data Protection</span><span class="text-gold-500 font-bold block">Active</span></div></div></div>`; break; case 'Staff': html = `<div class="p-4 bg-navy-900 border border-slate-800 rounded"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-slate-200 uppercase tracking-wider"><i class="fas fa-id-badge"></i> Staff Member Desk</h5><span class="text-[9px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono uppercase font-bold">Operational</span></div><p class="text-xs text-slate-400 leading-relaxed">Provides daily log submissions, active service desk queues, check-in tracking history, and simple report generation.</p></div>`; break; case 'Doctor': html = `<div class="p-4 bg-navy-900 border border-slate-800 rounded"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-rose-400 uppercase tracking-wider"><i class="fas fa-user-md"></i> Doctor Consultation Portal</h5><span class="text-[9px] bg-rose-500/20 text-rose-400 px-2 py-0.5 rounded font-mono uppercase font-bold">Orthopedics</span></div><p class="text-xs text-slate-400 leading-relaxed">Enables medical check-up charts, active OP queue statuses, electronic prescriptions, and medical reports creation.</p></div>`; break; case 'Teacher': html = `<div class="p-4 bg-navy-900 border border-slate-800 rounded"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-sky-400 uppercase tracking-wider"><i class="fas fa-chalkboard-teacher"></i> Teacher Academic Log</h5><span class="text-[9px] bg-sky-500/20 text-sky-400 px-2 py-0.5 rounded font-mono uppercase font-bold">Class 10-A</span></div><p class="text-xs text-slate-400 leading-relaxed">Edit class marks records, register online class student attendance files, and publish homework assignments notifications.</p></div>`; break; case 'Student': html = `<div class="p-4 bg-navy-900 border border-slate-800 rounded"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-indigo-400 uppercase tracking-wider"><i class="fas fa-user-graduate"></i> Student Profile Panel</h5><span class="text-[9px] bg-indigo-500/20 text-indigo-400 px-2 py-0.5 rounded font-mono uppercase font-bold">Grade X</span></div><p class="text-xs text-slate-400 leading-relaxed">Check ongoing test marks card, track submitted homework, and read official school notification letters.</p></div>`; break; case 'Customer': html = `<div class="p-4 bg-navy-900 border border-slate-800 rounded"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-emerald-400 uppercase tracking-wider"><i class="fas fa-shopping-bag"></i> Customer Billing Desk</h5><span class="text-[9px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded font-mono uppercase font-bold">Transactions</span></div><p class="text-xs text-slate-400 leading-relaxed">Monitor ongoing purchases, download transaction invoice papers, and manage profile registration data details.</p></div>`; break; case 'User': html = `<div class="p-4 bg-navy-900 border border-slate-800 rounded"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-amber-500 uppercase tracking-wider"><i class="fas fa-user"></i> General User Profile</h5><span class="text-[9px] bg-amber-500/20 text-amber-500 px-2 py-0.5 rounded font-mono uppercase font-bold">General Access</span></div><p class="text-xs text-slate-400 leading-relaxed">Submit general enquiry forms, look at active public notifications list, and modify basic account setup.</p></div>`; break; } shell.innerHTML = html; }
-function openSimulationPortal(role) { document.getElementById('sandbox').scrollIntoView({ behavior: 'smooth' }); setTimeout(() => { setSimulatedRole(role); triggerCustomAlert('Role Initialized', `Simulated login session compiled for ${role} status. Check the Sandbox workspace below.`, 'success'); }, 300); }
+/* CM049 - Sandbox Role Selector and Output Generation JS */
+function setSimulatedRole(role) { document.querySelectorAll('.sim-role-btn').forEach(b => { b.className = "sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 flex items-center gap-2"; }); document.getElementById(`sim-role-btn-${role}`).className = "sim-role-btn text-left px-4 py-2.5 rounded text-xs font-bold bg-gold-500 text-white flex items-center gap-2 shadow-sm"; const shell = document.getElementById('simulated-dashboard-content'); let html = ''; switch(role) { case 'Admin': html = `<div class="p-4 bg-white border border-slate-200 rounded shadow-sm"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-gold-700 uppercase tracking-wider"><i class="fas fa-shield-alt"></i> Admin Control Panel</h5><span class="text-[9px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-mono uppercase font-bold">System Root</span></div><p class="text-xs text-slate-500 leading-relaxed">Absolute control with server-side auth: download databases, manage roles, view logs, and approve custom integrations.</p><div class="grid grid-cols-3 gap-3 mt-4 text-[10px]"><div class="bg-slate-50 p-2.5 rounded border border-slate-200 text-center"><span class="text-slate-500 block uppercase">Log Count</span><span class="text-slate-900 font-bold block">1,842</span></div><div class="bg-slate-50 p-2.5 rounded border border-slate-200 text-center"><span class="text-slate-500 block uppercase">Free-Tier Server</span><span class="text-emerald-600 font-bold block">ONLINE</span></div><div class="bg-slate-50 p-2.5 rounded border border-slate-200 text-center"><span class="text-slate-500 block uppercase">Data Protection</span><span class="text-gold-700 font-bold block">Active</span></div></div></div>`; break; case 'Staff': html = `<div class="p-4 bg-white border border-slate-200 rounded shadow-sm"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-slate-700 uppercase tracking-wider"><i class="fas fa-id-badge"></i> Staff Member Desk</h5><span class="text-[9px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono uppercase font-bold">Operational</span></div><p class="text-xs text-slate-500 leading-relaxed">Provides daily log submissions, active service desk queues, check-in tracking history, and simple report generation.</p></div>`; break; case 'Doctor': html = `<div class="p-4 bg-white border border-slate-200 rounded shadow-sm"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-rose-600 uppercase tracking-wider"><i class="fas fa-user-md"></i> Doctor Consultation Portal</h5><span class="text-[9px] bg-rose-100 text-rose-700 px-2 py-0.5 rounded font-mono uppercase font-bold">Orthopedics</span></div><p class="text-xs text-slate-500 leading-relaxed">Enables medical check-up charts, active OP queue statuses, electronic prescriptions, and medical reports creation.</p></div>`; break; case 'Teacher': html = `<div class="p-4 bg-white border border-slate-200 rounded shadow-sm"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-sky-600 uppercase tracking-wider"><i class="fas fa-chalkboard-teacher"></i> Teacher Academic Log</h5><span class="text-[9px] bg-sky-100 text-sky-700 px-2 py-0.5 rounded font-mono uppercase font-bold">Class 10-A</span></div><p class="text-xs text-slate-500 leading-relaxed">Edit class marks records, register online class student attendance files, and publish homework assignments notifications.</p></div>`; break; case 'Student': html = `<div class="p-4 bg-white border border-slate-200 rounded shadow-sm"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-indigo-600 uppercase tracking-wider"><i class="fas fa-user-graduate"></i> Student Profile Panel</h5><span class="text-[9px] bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded font-mono uppercase font-bold">Grade X</span></div><p class="text-xs text-slate-500 leading-relaxed">Check ongoing test marks card, track submitted homework, and read official school notification letters.</p></div>`; break; case 'Customer': html = `<div class="p-4 bg-white border border-slate-200 rounded shadow-sm"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-emerald-600 uppercase tracking-wider"><i class="fas fa-shopping-bag"></i> Customer Billing Desk</h5><span class="text-[9px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-mono uppercase font-bold">Transactions</span></div><p class="text-xs text-slate-500 leading-relaxed">Monitor ongoing purchases, download transaction invoice papers, and manage profile registration data details.</p></div>`; break; case 'User': html = `<div class="p-4 bg-white border border-slate-200 rounded shadow-sm"><div class="flex items-center justify-between mb-2"><h5 class="text-xs font-bold text-amber-600 uppercase tracking-wider"><i class="fas fa-user"></i> General User Profile</h5><span class="text-[9px] bg-amber-100 text-amber-700 px-2 py-0.5 rounded font-mono uppercase font-bold">General Access</span></div><p class="text-xs text-slate-500 leading-relaxed">Submit general enquiry forms, look at active public notifications list, and modify basic account setup.</p></div>`; break; } shell.innerHTML = html; } function openSimulationPortal(role) { document.getElementById('sandbox').scrollIntoView({ behavior: 'smooth' }); setTimeout(() => { setSimulatedRole(role); triggerCustomAlert('Role Initialized', `Simulated login session compiled for ${role} status. Check the Sandbox workspace below.`, 'success'); }, 300); }
 
-/* CM035 - Attendance Punch Recording Logic */
-function triggerAttendancePunch(type) { const name = document.getElementById('attendance-user-name').value.trim(); if (!name) { triggerCustomAlert('Punch Error', 'Please enter a name for the simulation.', 'error'); return; } const ph = document.getElementById('no-punches-placeholder'); if (ph) ph.remove(); const shell = document.getElementById('attendance-log-shell'); const now = new Date(); const timeStr = now.toTimeString().split(' ')[0]; punchesCount++; const log = document.createElement('div'); log.className = `p-2.5 rounded border flex items-center justify-between text-[11px] ${type === 'IN' ? 'bg-emerald-950/40 border-emerald-500/20 text-emerald-300' : 'bg-rose-950/40 border-rose-500/20 text-rose-300'}`; log.innerHTML = `<span><i class="${type === 'IN' ? 'fas fa-sign-in-alt text-emerald-500' : 'fas fa-sign-out-alt text-rose-500'} mr-1.5"></i><strong>${name}</strong> PUNCHED ${type}</span><span class="text-slate-500">Time: ${timeStr} | IP verified</span>`; shell.insertBefore(log, shell.firstChild); }
-function clearPunchTerminal() { document.getElementById('attendance-log-shell').innerHTML = `<p class="text-slate-500 italic text-center pt-8" id="no-punches-placeholder">[No active logs in current session. Submit a punch to test.]</p>`; punchesCount = 0; }
+/* CM050 - Attendance Punch Recording Logic JS */
+function triggerAttendancePunch(type) { const name = document.getElementById('attendance-user-name').value.trim(); if (!name) { triggerCustomAlert('Punch Error', 'Please enter a name for the simulation.', 'error'); return; } const ph = document.getElementById('no-punches-placeholder'); if (ph) ph.remove(); const shell = document.getElementById('attendance-log-shell'); const now = new Date(); const timeStr = now.toTimeString().split(' ')[0]; punchesCount++; const log = document.createElement('div'); log.className = `p-2.5 rounded border flex items-center justify-between text-[11px] bg-white shadow-sm ${type === 'IN' ? 'border-emerald-200 text-emerald-700' : 'border-rose-200 text-rose-700'}`; log.innerHTML = `<span><i class="${type === 'IN' ? 'fas fa-sign-in-alt text-emerald-500' : 'fas fa-sign-out-alt text-rose-500'} mr-1.5"></i><strong>${name}</strong> PUNCHED ${type}</span><span class="text-slate-400">Time: ${timeStr} | IP verified</span>`; shell.insertBefore(log, shell.firstChild); } function clearPunchTerminal() { document.getElementById('attendance-log-shell').innerHTML = `<p class="text-slate-400 italic text-center pt-8" id="no-punches-placeholder">[No active logs in current session. Submit a punch to test.]</p>`; punchesCount = 0; }
 
-/* CM036 - Directory Search & Row Filter Algorithms */
-function openQuotationModal(plan) { document.getElementById('modal-plan-name').value = plan; const m = document.getElementById('quotation-modal'); m.classList.remove('opacity-0', 'pointer-events-none'); }
-function closeQuotationModal() { document.getElementById('quotation-modal').classList.add('opacity-0', 'pointer-events-none'); document.getElementById('modal-quotation-form').reset(); }
+/* CM051 - Direct Contact Alert Actions JS */
+function triggerContactAlert() { document.getElementById('contact-action-modal').classList.remove('opacity-0', 'pointer-events-none'); } function closeContactAlert() { document.getElementById('contact-action-modal').classList.add('opacity-0', 'pointer-events-none'); }
 
-/* CM037 - New Member Record Insertion */
-function submitQuotationPlanner(event) { event.preventDefault(); const name = document.getElementById('modal-client-name').value.trim(); const phone = document.getElementById('modal-client-phone').value.trim(); const plan = document.getElementById('modal-plan-name').value; closeQuotationModal(); triggerCustomAlert('Proposal Created', `Thank you, ${name}. Your request for a customized ${plan} has been recorded. Our architects will contact you at ${phone} with details.`, 'success'); }
-
-/* CM038 - Proposal Validation & Form Controls */
-function validateAndSubmitEnquiry(event) { event.preventDefault(); const name = document.getElementById('form-name').value.trim(); const org = document.getElementById('form-org').value.trim(); const phone = document.getElementById('form-phone').value.trim(); const email = document.getElementById('form-email').value.trim(); const requirements = document.getElementById('form-requirements').value.trim(); let valid = true; document.querySelectorAll('[id^="error-"]').forEach(el => el.classList.add('hidden')); if (!name) { document.getElementById('error-name').classList.remove('hidden'); valid = false; } if (!org) { document.getElementById('error-org').classList.remove('hidden'); valid = false; } if (!phone || !/^\d{10}$/.test(phone)) { document.getElementById('error-phone').classList.remove('hidden'); valid = false; } if (!email || !/\S+@\S+\.\S+/.test(email)) { document.getElementById('error-email').classList.remove('hidden'); valid = false; } if (!requirements) { document.getElementById('error-requirements').classList.remove('hidden'); valid = false; } if (!valid) return; document.getElementById('success-client-name').innerText = name; document.getElementById('success-client-phone').innerText = phone; document.getElementById('enquiry-success-message').classList.remove('hidden'); }
-function resetEnquiryFormState() { document.getElementById('enquiry-form').reset(); document.getElementById('enquiry-success-message').classList.add('hidden'); }
-
-/* CM039 - Service Worker Installation Support */
-function registerSystemWorker() { if ('serviceWorker' in navigator) { navigator.serviceWorker.register('data:text/javascript;base64,c2VsZi5hZGRFdmVudExpc3RlbmVyKCdmZXRjaCcsIGV2ZW50ID0+IHsgZXZlbnQucmVzcG9uZFdpdGgoZmV0Y2goZXZlbnQucmVxdWVzdCkpOyB9KTs=').catch(err => console.log('SW register trace:', err)); } }
-window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); pwaDeferredPrompt = e; });
-function triggerPwaInstallation() { if (pwaDeferredPrompt) { pwaDeferredPrompt.prompt(); pwaDeferredPrompt.userChoice.then((choice) => { if (choice.outcome === 'accepted') { triggerCustomAlert('Installation Success', 'Sri Veda App successfully installed to your home screen.', 'success'); } pwaDeferredPrompt = null; }); } else { triggerCustomAlert('Standalone Ready', 'This PWA app can be added directly via browser controls ("Add to Home Screen").', 'info'); } }
+/* CM052 - Service Worker Installation Support JS */
+function registerSystemWorker() { if ('serviceWorker' in navigator) { navigator.serviceWorker.register('data:text/javascript;base64,c2VsZi5hZGRFdmVudExpc3RlbmVyKCdmZXRjaCcsIGV2ZW50ID0+IHsgZXZlbnQucmVzcG9uZFdpdGgoZmV0Y2goZXZlbnQucmVxdWVzdCkpOyB9KTs=').catch(err => console.log('SW register trace:', err)); } } window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); pwaDeferredPrompt = e; }); function triggerPwaInstallation() { if (pwaDeferredPrompt) { pwaDeferredPrompt.prompt(); pwaDeferredPrompt.userChoice.then((choice) => { if (choice.outcome === 'accepted') { triggerCustomAlert('Installation Success', 'Sri Veda App successfully installed to your home screen.', 'success'); } pwaDeferredPrompt = null; }); } else { triggerCustomAlert('Standalone Ready', 'This PWA app can be added directly via browser controls ("Add to Home Screen").', 'info'); } }
 </script>
 </body>
 </html>
