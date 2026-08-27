@@ -1,1 +1,342 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Veda Organization - Premium Letterhead Generator</title>
+<link rel="icon" type="image/png" href="https://srivedaorg.online/SV_ORG_LOGO_FEVICON.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+<style>
+:root { --sv-blue: #1e3a8a; }
+* { font-family: 'Roboto Slab', serif !important; box-sizing: border-box; }
+body { margin: 0; padding: 0; background-color: #f1f5f9; overflow-y: auto; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+.app-layout { display: flex; flex-direction: column; min-height: 100vh; width: 100vw; }
+/* Changed to static so it scrolls away naturally instead of staying fixed */
+.top-bar { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 15px; background: rgba(241, 245, 249, 1); border-bottom: 1px solid #e2e8f0; }
+
+.action-btn { padding: 8px 32px; border-radius: 6px; font-weight: 900; text-transform: uppercase; font-size: 14px; letter-spacing: 0.1em; cursor: pointer; transition: all 0.1s ease; border: none; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
+.btn-print { background: linear-gradient(145deg, #2563eb, #1e3a8a); box-shadow: 0 4px 0 #172554, 0 8px 15px rgba(30, 58, 138, 0.4); }
+.btn-print:active { transform: translateY(4px); box-shadow: 0 0 0 #172554, 0 4px 10px rgba(30, 58, 138, 0.4); }
+.btn-reset { background: linear-gradient(145deg, #ef4444, #b91c1c); box-shadow: 0 4px 0 #7f1d1d, 0 8px 15px rgba(239, 68, 68, 0.4); }
+.btn-reset:active { transform: translateY(4px); box-shadow: 0 0 0 #7f1d1d, 0 4px 10px rgba(239, 68, 68, 0.4); }
+
+.preview-area { flex-grow: 1; padding: 2.5rem; background: radial-gradient(circle at center, #f8fafc 0%, #e2e8f0 100%); display: flex; flex-direction: column; align-items: center; gap: 40px; }
+
+@page { size: A4; margin: 0; }
+.page { 
+    width: 210mm; 
+    height: 297mm; 
+    background: white; 
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); 
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    padding: 4mm; /* Outside Border Gap */
+    flex-shrink: 0; 
+}
+
+@media print { 
+    body { background: none; display: block; overflow: visible !important; } 
+    .app-layout { display: block; height: auto; width: 100%; } 
+    .top-bar { display: none !important; } 
+    .preview-area { padding: 0; background: none; display: block; overflow: visible !important; gap: 0 !important; } 
+    .page { margin: 0 !important; box-shadow: none !important; width: 210mm; height: 297mm; transform: scale(1) !important; page-break-after: always; break-after: page; } 
+    .page:last-child { page-break-after: auto; break-after: auto; } 
+    input { border: none !important; background: transparent !important; color: #1e3a8a !important; font-weight: bold; }
+    input[type="date"]::-webkit-calendar-picker-indicator { display: none; }
+    .editable-box { border: none !important; background: transparent !important; }
+}
+
+.main-border { 
+    position: relative; 
+    border: 1.5px solid var(--sv-blue); 
+    height: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    padding: 3mm; /* 4 sides exact uniform gap */
+    background-color: #ffffff; 
+    z-index: 2; 
+}
+
+.main-border::after { 
+    content: ''; 
+    position: absolute; 
+    top: 2px; 
+    left: 2px; 
+    right: 2px; 
+    bottom: 2px; 
+    border: 1px solid var(--sv-blue); 
+    opacity: 0.8; 
+    pointer-events: none; 
+}
+
+.corner { position: absolute; width: 25px; height: 25px; z-index: 10; color: var(--sv-blue); }
+.top-left { top: -2px; left: -2px; }
+.top-right { top: -2px; right: -2px; transform: rotate(90deg); }
+.bottom-left { bottom: -2px; left: -2px; transform: rotate(-90deg); }
+.bottom-right { bottom: -2px; right: -2px; transform: rotate(180deg); }
+
+.doc-input {
+    background: transparent;
+    border: 1px dashed #cbd5e1;
+    color: var(--sv-blue);
+    font-weight: 800;
+    outline: none;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+.doc-input:focus { border-color: var(--sv-blue); background: #f8fafc; }
+input[type="date"].doc-input { cursor: pointer; }
+
+/* Content Editable Area with Capitalization */
+.editable-box {
+    width: 100%;
+    flex-grow: 1;
+    border: 1px dashed #cbd5e1;
+    border-radius: 4px;
+    padding: 8px;
+    outline: none;
+    text-transform: capitalize; /* Every word first letter capitalized */
+    font-size: 13px;
+    color: #1f2937;
+    line-height: 1.8;
+    text-align: justify;
+    font-weight: 500;
+    transition: all 0.2s;
+    white-space: pre-wrap;
+}
+.editable-box:focus { border-color: var(--sv-blue); background: #f8fafc; }
+.editable-box:empty:before { content: attr(placeholder); color: #94a3b8; pointer-events: none; text-transform: none; }
+</style>
+</head>
+<body>
+
+<div class="app-layout">
+
+    <div class="top-bar no-print">
+        <button onclick="window.print()" class="action-btn btn-print">PRINT</button>
+        <button onclick="resetInputs()" class="action-btn btn-reset">RESET</button>
+    </div>
+
+<div class="preview-area" id="previewAreaScroll">
+
+    <!-- PAGE 1: AGREEMENT -->
+    <div class="page">
+        <div class="main-border">
+            <svg class="corner top-left" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            <svg class="corner top-right" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            <svg class="corner bottom-left" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            <svg class="corner bottom-right" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            
+            <img src="https://srivedaorg.online/LP_HEADER_TOP_IMAGE.png" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[65%] opacity-[0.08] pointer-events-none filter grayscale object-contain z-0" alt="Watermark">
+            
+            <header class="flex justify-between items-center border-b-[2.5px] border-blue-900 pb-2 mb-3 mx-1 z-10 relative pt-1">
+                <div class="flex items-center ml-1">
+                    <img src="https://srivedaorg.online/LP_HEADER_TOP_IMAGE.png" class="h-[5.8rem] w-auto object-contain drop-shadow-lg p-1 bg-white/90 border border-gray-100 rounded">
+                    <div class="h-16 w-[1.5px] bg-blue-900/30 ml-4 rounded"></div>
+                </div>
+                <div class="text-right flex flex-col items-end pr-1">
+                    <h1 class="text-[28px] font-black text-blue-900 uppercase leading-none tracking-tight">Sri Veda Organization</h1>
+                    <p class="text-[11px] font-bold text-gray-500 uppercase mt-1.5 tracking-[0.25em]">Professional Web Designers</p>
+                    <div class="mt-2 text-right">
+                        <p class="text-[10px] text-gray-700 font-medium leading-relaxed max-w-[270px]">1-113#A, ChakravarthulaPalli Mutyalapadu(P),<br> Chagalamarri(M), Nandyal(D), AP-518553.</p>
+                        <div class="flex justify-end gap-3 mt-1 text-[10px] font-bold text-blue-900">
+                            <span class="flex items-center gap-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>9346119924</span>
+                            <span class="flex items-center gap-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>karimaddela143@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <main class="flex-grow flex flex-col w-full z-10 relative">
+                <div class="flex justify-between mb-2 text-[12px] font-bold text-gray-500 border-b border-gray-100 pb-2 mx-1">
+                    <span class="flex items-center gap-2">REF NO: <input type="text" class="doc-input sync-ref uppercase w-48" placeholder="Enter Ref Number" oninput="syncFields('sync-ref', this.value)"></span>
+                    <span class="flex items-center gap-2">DATE: <input type="date" class="doc-input sync-date w-36" onchange="syncFields('sync-date', this.value)"></span>
+                </div>
+                
+                <h2 class="text-red-600 font-black text-center text-[19px] uppercase tracking-widest mt-4 mb-4 underline decoration-2 underline-offset-4">WEB - DIGITAL PROJECT DETAILS - AGREEMENT</h2>
+                
+                <div contenteditable="true" class="editable-box doc-input-clearable" placeholder="Type project details here... (Text will automatically capitalize the first letter of each word)"></div>
+            </main>
+            
+            <footer class="mt-auto pt-4 border-t-[1.5px] border-blue-900/20 pb-4 z-10 relative flex justify-between items-end mx-1">
+                <div class="text-left w-64">
+                    <p class="text-[13px] font-black text-blue-900 uppercase">K Narasimha Reddy</p>
+                    <p class="text-[11px] font-bold text-gray-700 mt-0.5">9346119924</p>
+                    <p class="text-[10px] font-bold text-amber-600 uppercase tracking-widest mt-0.5">Sri Veda Organizer</p>
+                </div>
+                <div class="text-center flex flex-col items-center">
+                    <div class="h-12 w-48 border-b-2 border-dashed border-gray-400 mb-2"></div>
+                    <p class="text-[12px] font-black text-blue-900 uppercase">Authorized Project Signatory</p>
+                    <p class="text-[10px] font-bold text-gray-600 uppercase mt-0.5 tracking-wider">(I READ COMPLETE)</p>
+                </div>
+                
+                <!-- Page Number -->
+                <div class="absolute bottom-[-2mm] left-1/2 transform -translate-x-1/2 text-[10px] font-bold text-blue-900">Page 1 of 3</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- PAGE 2: COMPLETION REPORT -->
+    <div class="page">
+        <div class="main-border">
+            <svg class="corner top-left" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            <svg class="corner top-right" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            <svg class="corner bottom-left" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            <svg class="corner bottom-right" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            
+            <img src="https://srivedaorg.online/LP_HEADER_TOP_IMAGE.png" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[65%] opacity-[0.08] pointer-events-none filter grayscale object-contain z-0" alt="Watermark">
+            
+            <header class="flex justify-between items-center border-b-[2.5px] border-blue-900 pb-2 mb-3 mx-1 z-10 relative pt-1">
+                <div class="flex items-center ml-1">
+                    <img src="https://srivedaorg.online/LP_HEADER_TOP_IMAGE.png" class="h-[5.8rem] w-auto object-contain drop-shadow-lg p-1 bg-white/90 border border-gray-100 rounded">
+                    <div class="h-16 w-[1.5px] bg-blue-900/30 ml-4 rounded"></div>
+                </div>
+                <div class="text-right flex flex-col items-end pr-1">
+                    <h1 class="text-[28px] font-black text-blue-900 uppercase leading-none tracking-tight">Sri Veda Organization</h1>
+                    <p class="text-[11px] font-bold text-gray-500 uppercase mt-1.5 tracking-[0.25em]">Professional Web Designers</p>
+                    <div class="mt-2 text-right">
+                        <p class="text-[10px] text-gray-700 font-medium leading-relaxed max-w-[270px]">1-113#A, ChakravarthulaPalli Mutyalapadu(P),<br> Chagalamarri(M), Nandyal(D), AP-518553.</p>
+                        <div class="flex justify-end gap-3 mt-1 text-[10px] font-bold text-blue-900">
+                            <span class="flex items-center gap-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>9346119924</span>
+                            <span class="flex items-center gap-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>karimaddela143@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <main class="flex-grow flex flex-col w-full z-10 relative">
+                <div class="flex justify-between mb-2 text-[12px] font-bold text-gray-500 border-b border-gray-100 pb-2 mx-1">
+                    <span class="flex items-center gap-2">REF NO: <input type="text" class="doc-input sync-ref uppercase w-48" placeholder="Enter Ref Number" oninput="syncFields('sync-ref', this.value)"></span>
+                    <span class="flex items-center gap-2">DATE: <input type="date" class="doc-input sync-date w-36" onchange="syncFields('sync-date', this.value)"></span>
+                </div>
+                
+                <h2 class="text-red-600 font-black text-center text-[19px] uppercase tracking-widest mt-4 mb-4 underline decoration-2 underline-offset-4">WEB - DIGITAL PROJECT COMPLETION REPORT</h2>
+                
+                <div contenteditable="true" class="editable-box doc-input-clearable" placeholder="Type completion report details here..."></div>
+            </main>
+            
+            <footer class="mt-auto pt-4 border-t-[1.5px] border-blue-900/20 pb-4 z-10 relative flex justify-between items-end mx-1">
+                <div class="text-left w-64">
+                    <p class="text-[13px] font-black text-blue-900 uppercase">K Narasimha Reddy</p>
+                    <p class="text-[11px] font-bold text-gray-700 mt-0.5">9346119924</p>
+                    <p class="text-[10px] font-bold text-amber-600 uppercase tracking-widest mt-0.5">Sri Veda Organizer</p>
+                </div>
+                <div class="text-center flex flex-col items-center">
+                    <div class="h-12 w-48 border-b-2 border-dashed border-gray-400 mb-2"></div>
+                    <p class="text-[12px] font-black text-blue-900 uppercase">Authorized Project Signatory</p>
+                    <p class="text-[10px] font-bold text-gray-600 uppercase mt-0.5 tracking-wider">(I READ COMPLETE)</p>
+                </div>
+                
+                <!-- Page Number -->
+                <div class="absolute bottom-[-2mm] left-1/2 transform -translate-x-1/2 text-[10px] font-bold text-blue-900">Page 2 of 3</div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- PAGE 3: PAYMENT OVERVIEW -->
+    <div class="page">
+        <div class="main-border">
+            <svg class="corner top-left" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            <svg class="corner top-right" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            <svg class="corner bottom-left" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            <svg class="corner bottom-right" viewBox="0 0 100 100" fill="currentColor"><path d="M0 0 v100 h10 v-90 h90 v-10 z M25 25 v50 h5 v-45 h45 v-5 z"/></svg>
+            
+            <img src="https://srivedaorg.online/LP_HEADER_TOP_IMAGE.png" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[65%] opacity-[0.08] pointer-events-none filter grayscale object-contain z-0" alt="Watermark">
+            
+            <header class="flex justify-between items-center border-b-[2.5px] border-blue-900 pb-2 mb-3 mx-1 z-10 relative pt-1">
+                <div class="flex items-center ml-1">
+                    <img src="https://srivedaorg.online/LP_HEADER_TOP_IMAGE.png" class="h-[5.8rem] w-auto object-contain drop-shadow-lg p-1 bg-white/90 border border-gray-100 rounded">
+                    <div class="h-16 w-[1.5px] bg-blue-900/30 ml-4 rounded"></div>
+                </div>
+                <div class="text-right flex flex-col items-end pr-1">
+                    <h1 class="text-[28px] font-black text-blue-900 uppercase leading-none tracking-tight">Sri Veda Organization</h1>
+                    <p class="text-[11px] font-bold text-gray-500 uppercase mt-1.5 tracking-[0.25em]">Professional Web Designers</p>
+                    <div class="mt-2 text-right">
+                        <p class="text-[10px] text-gray-700 font-medium leading-relaxed max-w-[270px]">1-113#A, ChakravarthulaPalli Mutyalapadu(P),<br> Chagalamarri(M), Nandyal(D), AP-518553.</p>
+                        <div class="flex justify-end gap-3 mt-1 text-[10px] font-bold text-blue-900">
+                            <span class="flex items-center gap-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>9346119924</span>
+                            <span class="flex items-center gap-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>karimaddela143@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <main class="flex-grow flex flex-col w-full z-10 relative">
+                <div class="flex justify-between mb-2 text-[12px] font-bold text-gray-500 border-b border-gray-100 pb-2 mx-1">
+                    <span class="flex items-center gap-2">REF NO: <input type="text" class="doc-input sync-ref uppercase w-48" placeholder="Enter Ref Number" oninput="syncFields('sync-ref', this.value)"></span>
+                    <span class="flex items-center gap-2">DATE: <input type="date" class="doc-input sync-date w-36" onchange="syncFields('sync-date', this.value)"></span>
+                </div>
+                
+                <h2 class="text-red-600 font-black text-center text-[19px] uppercase tracking-widest mt-4 mb-3 underline decoration-2 underline-offset-4">WEB - DIGITAL PROJECT PAYMENT OVERVIEW</h2>
+                
+                <!-- Input Box for Top Section -->
+                <div contenteditable="true" class="editable-box doc-input-clearable mb-4" style="flex-grow: 0.1; min-height: 80px;" placeholder="Type payment introductory notes here..."></div>
+                
+                <!-- Table Pushed Near Bottom -->
+                <div class="w-full mt-auto mb-4">
+                    <table class="w-full border-collapse border-[1.5px] border-blue-900 text-center text-[11px] bg-white/70">
+                        <thead>
+                            <tr class="bg-blue-50 text-blue-900 font-bold uppercase">
+                                <th class="border-[1.5px] border-blue-900 p-1.5 w-12">SR NO</th>
+                                <th class="border-[1.5px] border-blue-900 p-1.5 w-28">DATE & TIME</th>
+                                <th class="border-[1.5px] border-blue-900 p-1.5 w-24">PAYMENT</th>
+                                <th class="border-[1.5px] border-blue-900 p-1.5 w-32">PAYMENT MODE</th>
+                                <th class="border-[1.5px] border-blue-900 p-1.5">PAYMENT IN WORDS</th>
+                                <th class="border-[1.5px] border-blue-900 p-1.5 w-36">PAYEE SIGNATURE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="h-10"><td class="border-[1.5px] border-blue-900 font-bold text-gray-600">1</td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td></tr>
+                            <tr class="h-10"><td class="border-[1.5px] border-blue-900 font-bold text-gray-600">2</td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td></tr>
+                            <tr class="h-10"><td class="border-[1.5px] border-blue-900 font-bold text-gray-600">3</td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td></tr>
+                            <tr class="h-10"><td class="border-[1.5px] border-blue-900 font-bold text-gray-600">4</td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td></tr>
+                            <tr class="h-10"><td class="border-[1.5px] border-blue-900 font-bold text-gray-600">5</td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td></tr>
+                            <tr class="h-10"><td class="border-[1.5px] border-blue-900 font-bold text-gray-600">6</td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td></tr>
+                            <tr class="h-10"><td class="border-[1.5px] border-blue-900 font-bold text-gray-600">7</td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td></tr>
+                            <tr class="h-10"><td class="border-[1.5px] border-blue-900 font-bold text-gray-600">8</td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td></tr>
+                            <tr class="h-10"><td class="border-[1.5px] border-blue-900 font-bold text-gray-600">9</td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td><td class="border-[1.5px] border-blue-900"></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+            
+            <footer class="mt-auto pt-2 border-t-[1.5px] border-blue-900/20 pb-4 z-10 relative flex justify-between items-end mx-1">
+                <div class="text-left w-64">
+                    <p class="text-[13px] font-black text-blue-900 uppercase">K Narasimha Reddy</p>
+                    <p class="text-[11px] font-bold text-gray-700 mt-0.5">9346119924</p>
+                    <p class="text-[10px] font-bold text-amber-600 uppercase tracking-widest mt-0.5">Sri Veda Organizer</p>
+                </div>
+                <div class="text-center flex flex-col items-center">
+                    <div class="h-12 w-48 border-b-2 border-dashed border-gray-400 mb-2"></div>
+                    <p class="text-[12px] font-black text-blue-900 uppercase">Authorized Project Signatory</p>
+                    <p class="text-[10px] font-bold text-gray-600 uppercase mt-0.5 tracking-wider">(I READ COMPLETE)</p>
+                </div>
+                
+                <!-- Page Number -->
+                <div class="absolute bottom-[-2mm] left-1/2 transform -translate-x-1/2 text-[10px] font-bold text-blue-900">Page 3 of 3</div>
+            </footer>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<script>
+    // Sync Date and Ref Inputs across all pages
+    function syncFields(className, value) {
+        document.querySelectorAll('.' + className).forEach(el => el.value = value);
+    }
+    
+    // Clear all inputs including content-editable divs
+    function resetInputs() {
+        document.querySelectorAll('.doc-input').forEach(el => el.value = '');
+        document.querySelectorAll('.doc-input-clearable').forEach(el => el.innerHTML = '');
+    }
+</script>
+
+</body>
+</html>
